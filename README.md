@@ -29,7 +29,7 @@ Lưu ý: trang đăng bằng Pages là công khai dù repo ở chế độ riên
 
 ## Sửa nội dung thường gặp
 
-- **Sản phẩm, giá, kích thước:** mảng `P` trong phần `<script>` của `index.html`.
+- **Sản phẩm, giá, kích thước:** mảng `MN_PRODUCTS` trong `products.js`.
 - **Vật liệu và phụ kiện:** mảng `M` (từng vật liệu) và `G` (các nhóm) trong `vat-lieu.html`.
 - **Ảnh công trình:** thay ảnh trong `assets/du-an/` và danh sách `shots` trong `<script>`.
 - **Thông tin liên hệ:** khối `#lien-he` trong `index.html`.
@@ -37,7 +37,7 @@ Lưu ý: trang đăng bằng Pages là công khai dù repo ở chế độ riên
 
 ## Nguồn nội dung
 
-- Thông tin công ty, địa chỉ, liên hệ, công trình nền móng: hồ sơ năng lực PKK Group 2026.
+- Thông tin công ty, địa chỉ, liên hệ: hồ sơ năng lực PKK Group 2026.
 - Ảnh công trình và bản vẽ: tài liệu nội bộ của dự án nội thất gỗ đang thi công.
 - Ba sản phẩm "Ý tưởng từ Wood Magazine": chỉ lấy ý tưởng và thông số chung, hình vẽ minh họa tự tạo, không dùng ảnh hay bản vẽ trong tạp chí.
 - Bài tin tức: bản tóm tắt tiếng Việt, diễn đạt lại từ sách The Essential Wood Book (Cedar Lane Press, 2020).

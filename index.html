@@ -119,22 +119,6 @@
     </div>
   </section>
 
-  <section class="wrap sec" id="du-an">
-    <div class="sec-head">
-      <h2>Năng lực nền móng của PKK Group</h2>
-      <p>Phần nền móng cho nhà cao tầng và nhà máy, làm cho các tổng thầu như Coteccons và Victorycons. Cùng đội ngũ này đảm nhận thi công, lắp đặt cho công trình của bạn.</p>
-    </div>
-    <div class="spread">
-      <figure class="proj big" style="margin:0"><div id="p1" style="height:100%"></div>
-        <figcaption><b>Sài Gòn Bình An Global City, lô CT8–CT9</b><span>Coteccons · cọc ly tâm Ø300, Ø350 · 5.781 m cọc, ép trong 25 ngày</span></figcaption></figure>
-      <figure class="proj" style="margin:0"><div id="p2"></div>
-        <figcaption><b>Kim Cương Đỏ – Cara Legend, Cần Thơ</b><span>Victorycons · cọc PHC D400, D600 · 8 cọc thử nén tĩnh</span></figcaption></figure>
-      <figure class="proj" style="margin:0"><div id="p3"></div>
-        <figcaption><b>Nhà máy Nhôm Vĩnh Hưng, KCN Long Giang</b><span>Thiết kế và thi công cọc, móng · 70.000 m² · 3 tháng</span></figcaption></figure>
-    </div>
-    <p class="note">Số liệu lấy từ hồ sơ năng lực PKK Group 2026. Hình là minh họa, thay bằng ảnh công trình thật khi có file ảnh. Phần dự án nội thất sẽ bổ sung khi có công trình hoàn thiện.</p>
-  </section>
-
   <section class="wrap sec" id="vat-lieu">
     <div class="sec-head">
       <h2>Vật liệu và phụ kiện</h2>
@@ -273,22 +257,6 @@
   function c_items(c){return '<rect x="70" y="170" width="200" height="56" rx="14" fill="#6F7F66"/><rect x="82" y="140" width="176" height="46" rx="14" fill="#6F7F66"/><rect x="60" y="188" width="30" height="46" rx="12" fill="#6F7F66"/><rect x="250" y="188" width="30" height="46" rx="12" fill="#6F7F66"/><rect x="300" y="196" width="64" height="12" rx="4" fill="#5A3A28"/><rect x="312" y="208" width="8" height="30" fill="#2E2A25"/><rect x="346" y="208" width="8" height="30" fill="#2E2A25"/><rect x="330" y="70" width="5" height="168" fill="#2E2A25"/><path d="M306 76l14-36h30l14 36z" fill="#C9B27C"/>'}
 
   $("heroScene").innerHTML=scene("#B9C2B3","#C9B27C","#4D5E47");
-  function site(kind,col){ /* project site: building above ground, piles below */
-    var g="",i,x;
-    if(kind==="towers"){
-      g=[[70,70,70,170],[170,40,70,200],[260,90,64,150]].map(function(b){
-        var s='<rect x="'+b[0]+'" y="'+b[1]+'" width="'+b[2]+'" height="'+b[3]+'" fill="'+col+'" opacity=".85"/>',y,xx;
-        for(y=b[1]+10;y<b[1]+b[3]-12;y+=14)for(xx=b[0]+8;xx<b[0]+b[2]-8;xx+=12)s+='<rect x="'+xx+'" y="'+y+'" width="6" height="7" fill="#E6E9E4" opacity=".7"/>';
-        return s}).join("");
-    }else{
-      g='<path d="M30 236V150l50 24v-24l50 24v-24l50 24v-24l50 24v-24l50 24v62z" fill="'+col+'" opacity=".85"/><rect x="60" y="196" width="40" height="40" fill="#E6E9E4" opacity=".7"/>';
-    }
-    for(x=40;x<=360;x+=28)g+='<rect x="'+x+'" y="242" width="6" height="46" fill="var(--muted)" opacity=".55"/>';
-    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="var(--plaster)"/><rect y="236" width="400" height="64" fill="var(--floor)"/>'+g+'</svg>';
-  }
-  $("p1").innerHTML=site("towers","#1F7A43");
-  $("p2").innerHTML=site("towers","#14304F");
-  $("p3").innerHTML=site("factory","#14304F");
 
   /* ---------- catalog ---------- */
   function visible(){
