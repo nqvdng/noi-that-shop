@@ -158,3 +158,40 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
 }
 @media (max-width:520px){.steps{grid-template-columns:1fr}.top .btn span.t{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Biểu mẫu báo giá (bao-gia.html) */
+.bg-wrap{padding-bottom:56px}
+.bg-head{padding-block:clamp(24px,4vw,44px) 8px}
+.bg-head h1{font-size:clamp(2rem,4.4vw,3.2rem)}
+.bg-head p{margin-top:12px;max-width:60ch;color:var(--muted)}
+.bg-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;margin-top:20px}
+#qform .f{margin:0 0 18px;border:0;padding:0;min-width:0}
+#qform .f2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+#qform label,#qform legend{display:block;font-weight:600;font-size:.95rem;margin-bottom:6px;padding:0}
+#qform input[type=text],#qform input[type=tel],#qform input[type=email],#qform input[type=number],#qform select,#qform textarea{width:100%;font:inherit;color:var(--walnut);background:var(--paper);border:1.5px solid var(--line);border-radius:4px;padding:11px 12px;min-height:44px}
+#qform textarea{resize:vertical}
+#qform [aria-invalid="true"]{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass)}
+#qform .e{color:var(--walnut);font-size:.88rem;margin-top:6px;min-height:0}
+#qform .e:not(:empty)::before{content:"! ";font-weight:700;color:var(--brass)}
+.err-sum{border:1.5px solid var(--brass);border-radius:4px;padding:12px 16px;margin-bottom:18px;background:var(--plaster)}
+.err-sum ul{margin:6px 0 0;padding-left:1.2em}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 14px}
+#qform .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;min-height:44px;align-items:center;margin:0}
+#qform .check input{width:20px;height:20px;flex:none;accent-color:var(--moss)}
+.hint{font-size:.88rem;color:var(--muted);margin-top:8px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.chip.on{background:var(--moss);border-color:var(--moss);color:var(--on-accent)}
+.chip .rm{border:0;background:none;color:inherit;font-size:1.1rem;line-height:1;padding:0 2px 0 6px;min-width:28px;min-height:28px}
+#picked{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.addrow{max-width:420px}
+.bg-side{border-top:3px solid var(--moss);padding-top:16px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px)}
+.bg-side h2{font-size:1.3rem;margin-bottom:10px}
+.bg-side h3{font-size:1.05rem;margin:22px 0 8px}
+.bg-side p{color:var(--muted);margin-bottom:12px}
+.bg-done{margin-top:28px;max-width:680px}
+.bg-done h2{font-size:1.8rem;margin-bottom:10px}
+.bg-done p{color:var(--muted);margin-bottom:14px}
+.bg-done textarea{width:100%;min-height:200px;font:inherit;background:var(--paper);color:var(--walnut);border:1.5px solid var(--line);border-radius:4px;padding:12px;margin-bottom:14px}
+@media (max-width:900px){.bg-grid{grid-template-columns:1fr}.bg-side{position:static}}
+@media (max-width:520px){#qform .f2{grid-template-columns:1fr}}
