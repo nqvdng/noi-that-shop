@@ -1,0 +1,402 @@
+<title>Mộc Nhà Nội Thất</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: catalog (smow) crossed with editorial project spreads (Boca do Lobo): hero, filterable catalog with side rail, asymmetric project spread, build process, contact. */
+:root{
+  --plaster:#E6E9E4;      /* wall */
+  --paper:#F3F5F1;        /* page */
+  --walnut:#3B281E;       /* ink + wood */
+  --moss:#1F7A43;         /* accent, PKK green */
+  --brass:#A98338;        /* small highlights */
+  --line:#C9CEC6;
+  --muted:#5E6659;
+  --floor:#D3D8CF;
+  --panel:#DDE2DA;
+  --on-accent:#F3F5F1;
+  --font-display:"Bricolage Grotesque","Be Vietnam Pro",system-ui,sans-serif;
+  --font-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --plaster:#222A23;--paper:#171C18;--walnut:#ECE6DD;--moss:#7CC596;--brass:#D2AE5E;--line:#37403A;--muted:#A3AC9E;--floor:#2A332B;--panel:#2A332B;--on-accent:#171C18;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --plaster:#222A23;--paper:#171C18;--walnut:#ECE6DD;--moss:#7CC596;--brass:#D2AE5E;--line:#37403A;--muted:#A3AC9E;--floor:#2A332B;--panel:#2A332B;--on-accent:#171C18;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--walnut);font-family:var(--font-body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;flex-wrap:wrap}
+.brand{font-family:var(--font-display);font-weight:700;font-size:1.35rem;text-decoration:none;margin-right:auto}
+.brand span{color:var(--moss)}
+.nav{display:flex;gap:20px;font-size:.95rem}
+.nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--brass)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--walnut);background:transparent;padding:10px 18px;border-radius:4px;font-weight:500;text-decoration:none}
+.btn:hover{background:var(--walnut);color:var(--paper)}
+.btn.solid{background:var(--moss);border-color:var(--moss);color:var(--on-accent)}
+.btn.solid:hover{background:var(--walnut);border-color:var(--walnut);color:var(--paper)}
+.count{background:var(--brass);color:#1b1408;border-radius:99px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:.8rem;font-weight:600;padding:0 6px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(32px,6vw,72px)}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.4rem)}
+.hero p.lead{margin-top:20px;max-width:46ch;color:var(--muted);font-size:1.075rem}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.scene{background:var(--plaster);border-radius:6px;overflow:hidden;aspect-ratio:4/3;min-width:0}
+.scene svg{display:block;width:100%;height:100%}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px;font-size:.9rem;color:var(--muted)}
+.facts b{display:block;color:var(--walnut);font-family:var(--font-display);font-size:1.15rem}
+
+/* catalog */
+.sec{padding-block:clamp(40px,6vw,80px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.7rem)}
+.sec-head p{color:var(--muted);max-width:52ch}
+.shop{display:grid;grid-template-columns:230px 1fr;gap:36px;align-items:start}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);display:grid;gap:26px;min-width:0}
+.rail h3{font-size:1rem;margin-bottom:10px}
+.cats{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.cats button{width:100%;display:flex;justify-content:space-between;background:none;border:0;border-left:3px solid transparent;padding:7px 10px;text-align:left;border-radius:0}
+.cats button:hover{background:var(--plaster)}
+.cats button[aria-pressed="true"]{border-left-color:var(--moss);background:var(--plaster);font-weight:600}
+.cats small{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:none;padding:5px 12px;border-radius:99px;font-size:.88rem}
+.chip[aria-pressed="true"]{background:var(--walnut);color:var(--paper);border-color:var(--walnut)}
+select{font:inherit;background:var(--paper);color:var(--walnut);border:1px solid var(--line);padding:8px 10px;border-radius:4px;width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px 22px;min-width:0}
+.card{display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .pic{background:var(--panel);border-radius:4px;aspect-ratio:4/3;overflow:hidden;border:0;padding:0;width:100%}
+.card .pic svg{width:100%;height:100%;display:block;transition:transform .35s}
+.card .pic:hover svg{transform:scale(1.04)}
+.card h3{font-size:1.05rem;font-weight:600;font-family:var(--font-body);letter-spacing:0}
+.card .meta{color:var(--muted);font-size:.88rem}
+.card .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.price{font-weight:600;font-variant-numeric:tabular-nums}
+.add{border:1px solid var(--line);background:none;border-radius:4px;padding:6px 12px;font-size:.88rem}
+.add:hover{border-color:var(--moss);color:var(--moss)}
+.empty{padding:40px 0;color:var(--muted)}
+
+/* projects spread */
+.spread{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:auto auto;gap:22px}
+.proj{position:relative;border-radius:6px;overflow:hidden;background:var(--plaster);min-width:0}
+.proj.big{grid-row:span 2}
+.proj svg{display:block;width:100%;height:100%;min-height:240px}
+.proj figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(transparent,rgba(20,14,10,.78));color:#F3EEE6}
+.proj figcaption b{display:block;font-family:var(--font-display);font-size:1.25rem}
+.proj figcaption span{font-size:.88rem;opacity:.85}
+.note{margin-top:14px;color:var(--muted);font-size:.85rem}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:2px solid var(--walnut);counter-reset:s}
+.steps li{list-style:none;padding:18px 18px 8px 0;counter-increment:s;min-width:0}
+.steps li::before{content:"Bước " counter(s);display:block;color:var(--brass);font-weight:600;font-size:.88rem;margin-bottom:6px}
+.steps h3{font-size:1.1rem;margin-bottom:6px}
+.steps p{color:var(--muted);font-size:.92rem}
+.steps{padding:0;margin:0}
+
+/* contact */
+.contact{background:var(--moss);color:var(--on-accent)}
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;padding-block:clamp(36px,5vw,64px);align-items:center}
+.contact h2{font-size:clamp(1.7rem,3.2vw,2.5rem)}
+.contact p{margin-top:12px;max-width:48ch;opacity:.92}
+.contact .btn{border-color:var(--on-accent);color:var(--on-accent)}
+.contact .btn:hover{background:var(--on-accent);color:var(--moss)}
+.contact ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer{padding-block:24px;color:var(--muted);font-size:.85rem}
+
+/* overlays */
+.ov{position:fixed;inset:0;background:rgba(15,12,9,.55);z-index:40;display:grid;place-items:center;padding:16px}
+.sheet{background:var(--paper);color:var(--walnut);border-radius:8px;max-width:880px;width:100%;max-height:calc(100% - 16px);overflow:auto;display:grid;grid-template-columns:1.1fr 1fr}
+.sheet .pic{background:var(--panel);min-width:0}
+.sheet .pic svg{width:100%;height:100%;display:block;min-height:260px}
+.sheet .body{padding:28px;display:grid;gap:14px;align-content:start;min-width:0}
+.sheet h2{font-size:1.7rem}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:.95rem}
+.spec dt{color:var(--muted)}
+.spec dd{margin:0}
+.x{justify-self:end;background:none;border:1px solid var(--line);border-radius:4px;padding:4px 12px}
+.drawer{place-items:stretch end;padding:0}
+.drawer .sheet{display:block;max-width:420px;height:100%;max-height:none;border-radius:0;padding:24px 24px calc(24px + env(safe-area-inset-bottom,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.drawer ul{list-style:none;margin:16px 0;padding:0;display:grid;gap:10px}
+.drawer li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.drawer li button{background:none;border:0;color:var(--muted);text-decoration:underline}
+.drawer textarea{width:100%;min-height:120px;font:inherit;font-size:.9rem;background:var(--plaster);color:var(--walnut);border:1px solid var(--line);border-radius:4px;padding:10px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--walnut);color:var(--paper);padding:10px 18px;border-radius:4px;z-index:60}
+
+@media (max-width:900px){
+  .hero,.shop,.spread,.contact .wrap,.sheet{grid-template-columns:1fr}
+  .rail{position:static}
+  .steps{grid-template-columns:1fr 1fr}
+  .proj.big{grid-row:auto}
+  .nav{order:3;width:100%;overflow-x:auto}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.top .btn span.t{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Mộc<span> Nhà</span></a>
+    <nav class="nav" aria-label="Chính">
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#du-an">Dự án thi công</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <button class="btn" id="openList" type="button"><span class="t">Danh sách tư vấn</span><span class="count" id="listCount">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <h1>Nội thất chọn sẵn hoặc làm riêng, lắp đặt luôn tại công trình</h1>
+      <p class="lead">Chọn mẫu có sẵn trong kho, hoặc nhờ xưởng làm đúng kích thước căn hộ của bạn. Cùng một đội khảo sát, sản xuất và lắp đặt, nên bạn chỉ làm việc với một đầu mối.</p>
+      <div class="cta">
+        <a class="btn solid" href="#san-pham">Xem sản phẩm</a>
+        <a class="btn" href="#du-an">Xem dự án đã thi công</a>
+      </div>
+      <div class="facts">
+        <div><b>Bảo hành 24 tháng</b>khung gỗ và phụ kiện</div>
+        <div><b>Giao lắp 7–21 ngày</b>tùy mẫu có sẵn hay đặt làm</div>
+      </div>
+    </div>
+    <div class="scene" id="heroScene" role="img" aria-label="Phòng khách mẫu với sofa, bàn trà và đèn sàn"></div>
+  </section>
+
+  <section class="wrap sec" id="san-pham">
+    <div class="sec-head">
+      <h2>Sản phẩm</h2>
+      <p>Bấm vào ảnh để xem kích thước và vật liệu. Thêm món bạn thích vào danh sách để gửi tư vấn một lần.</p>
+    </div>
+    <div class="shop">
+      <aside class="rail" aria-label="Bộ lọc">
+        <div><h3>Phòng</h3><ul class="cats" id="cats"></ul></div>
+        <div><h3>Vật liệu</h3><div class="chips" id="mats"></div></div>
+        <div><h3><label for="sort">Sắp xếp</label></h3>
+          <select id="sort"><option value="def">Nổi bật</option><option value="asc">Giá thấp đến cao</option><option value="desc">Giá cao đến thấp</option></select>
+        </div>
+      </aside>
+      <div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="du-an">
+    <div class="sec-head">
+      <h2>Công trình PKK Group đã thi công</h2>
+      <p>Phần nền móng cho nhà cao tầng và nhà máy, làm cho các tổng thầu như Coteccons và Victorycons. Cùng đội ngũ này đảm nhận thi công, lắp đặt cho công trình của bạn.</p>
+    </div>
+    <div class="spread">
+      <figure class="proj big" style="margin:0"><div id="p1" style="height:100%"></div>
+        <figcaption><b>Sài Gòn Bình An Global City, lô CT8–CT9</b><span>Coteccons · cọc ly tâm Ø300, Ø350 · 5.781 m cọc, ép trong 25 ngày</span></figcaption></figure>
+      <figure class="proj" style="margin:0"><div id="p2"></div>
+        <figcaption><b>Kim Cương Đỏ – Cara Legend, Cần Thơ</b><span>Victorycons · cọc PHC D400, D600 · 8 cọc thử nén tĩnh</span></figcaption></figure>
+      <figure class="proj" style="margin:0"><div id="p3"></div>
+        <figcaption><b>Nhà máy Nhôm Vĩnh Hưng, KCN Long Giang</b><span>Thiết kế và thi công cọc, móng · 70.000 m² · 3 tháng</span></figcaption></figure>
+    </div>
+    <p class="note">Số liệu lấy từ hồ sơ năng lực PKK Group 2026. Hình là minh họa, thay bằng ảnh công trình thật khi có file ảnh. Phần dự án nội thất sẽ bổ sung khi có công trình hoàn thiện.</p>
+  </section>
+
+  <section class="wrap sec" id="quy-trinh">
+    <div class="sec-head"><h2>Từ lúc liên hệ đến lúc bàn giao</h2></div>
+    <ol class="steps">
+      <li><h3>Khảo sát</h3><p>Đo đạc tại nhà, nghe nhu cầu, chụp hiện trạng.</p></li>
+      <li><h3>Thiết kế và báo giá</h3><p>Bản vẽ phối cảnh và bảng khối lượng, giá ghi rõ từng hạng mục.</p></li>
+      <li><h3>Sản xuất</h3><p>Gia công tại xưởng, kiểm tra từng mẻ trước khi giao.</p></li>
+      <li><h3>Lắp đặt</h3><p>Đội thi công lắp tại công trình, vệ sinh sau khi xong.</p></li>
+      <li><h3>Bảo hành</h3><p>Phiếu bảo hành 24 tháng, có hotline xử lý lỗi.</p></li>
+    </ol>
+  </section>
+</main>
+
+<section class="contact" id="lien-he">
+  <div class="wrap">
+    <div>
+      <h2>Cần báo giá cả căn hộ hoặc công trình?</h2>
+      <p>Gửi danh sách sản phẩm bạn chọn kèm diện tích, đội tư vấn sẽ phản hồi trong ngày làm việc.</p>
+      <p style="font-size:.88rem">Công ty TNHH Tư vấn Thiết kế Xây dựng PKK Group · Mã số thuế 0318934932<br>Trụ sở: 1685/15A Lê Văn Lương, Ấp 3, xã Nhơn Đức, huyện Nhà Bè, TP.HCM<br>Văn phòng 2: Số 1, Đường 4, KDC Melosa Khang Điền, P. Long Trường, TP. Thủ Đức<br>Nhà xưởng: Số 2, Đường DT741, KP An Lợi, P. Hòa Lợi, TP.HCM</p>
+    </div>
+    <ul>
+      <li>Điện thoại: <strong>(+84) 905 006 046</strong> · <strong>(+84) 905 335 385</strong></li>
+      <li>Email: <strong>khoinv@pkkgroup.com.vn</strong></li>
+      <li>Email: <strong>vietng@pkkgroup.com.vn</strong></li>
+      <li><a class="btn" href="https://zalo.me/84905006046" target="_blank" rel="noopener">Nhắn Zalo</a> <a class="btn" href="https://pkkgroup.com.vn/" target="_blank" rel="noopener">Website PKK Group</a></li>
+    </ul>
+  </div>
+</section>
+<footer class="wrap">Bản mẫu website. Thông tin công ty lấy từ hồ sơ năng lực PKK Group 2026. Tên cửa hàng "Mộc Nhà", giá, kích thước và hình sản phẩm là nội dung giả định, cần thay bằng số liệu thật trước khi chạy.</footer>
+
+<div class="ov" id="detail" hidden role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <div class="sheet">
+    <div class="pic" id="dPic"></div>
+    <div class="body">
+      <button class="x" type="button" data-close>Đóng</button>
+      <h2 id="dTitle"></h2>
+      <p class="price" id="dPrice"></p>
+      <p id="dDesc" style="color:var(--muted)"></p>
+      <dl class="spec" id="dSpec"></dl>
+      <button class="btn solid" type="button" id="dAdd">Thêm vào danh sách tư vấn</button>
+    </div>
+  </div>
+</div>
+
+<div class="ov drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="lTitle">
+  <div class="sheet">
+    <button class="x" type="button" data-close style="float:right">Đóng</button>
+    <h2 id="lTitle" style="font-size:1.4rem">Danh sách tư vấn</h2>
+    <ul id="listItems"></ul>
+    <p id="listTotal" class="price"></p>
+    <label for="msg" style="display:block;margin:14px 0 6px;font-size:.9rem;color:var(--muted)">Nội dung để gửi qua Zalo hoặc email</label>
+    <textarea id="msg" readonly></textarea>
+    <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+      <button class="btn solid" type="button" id="copyMsg">Sao chép nội dung</button>
+      <button class="btn" type="button" id="clearList">Xóa danh sách</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+(function(){
+  /* ---------- data ---------- */
+  var P=[
+    {id:1,n:"Sofa văng Lục Bình",room:"Phòng khách",kind:"sofa",mat:"Vải bố",w:"#6F7F66",wood:"#3B281E",price:14900000,dim:"2200 x 900 x 780 mm",d:"Khung gỗ sồi sấy, đệm mút D40, vỏ vải bố giặt được."},
+    {id:2,n:"Bàn trà Tròn Óc Chó",room:"Phòng khách",kind:"table",mat:"Gỗ óc chó",w:"#6F7F66",wood:"#5A3A28",price:5200000,dim:"900 x 900 x 420 mm",d:"Mặt gỗ óc chó nhập khẩu veneer, chân sắt sơn tĩnh điện."},
+    {id:3,n:"Kệ tivi Hai Ngăn",room:"Phòng khách",kind:"cabinet",mat:"Gỗ sồi",w:"#6F7F66",wood:"#B58B5A",price:7800000,dim:"1800 x 400 x 520 mm",d:"Hai ngăn kéo, đi dây âm, chân gỗ tiện."},
+    {id:4,n:"Đèn sàn Vòm Nhỏ",room:"Phòng khách",kind:"lamp",mat:"Kim loại",w:"#C9B27C",wood:"#2E2A25",price:2400000,dim:"Cao 1500 mm, chụp đèn 350 mm",d:"Thân thép, chụp vải, dùng bóng E27."},
+    {id:5,n:"Giường Bắc Âu 1m8",room:"Phòng ngủ",kind:"bed",mat:"Gỗ sồi",w:"#9AA39A",wood:"#B58B5A",price:12500000,dim:"1900 x 2100 x 950 mm",d:"Đầu giường bọc nỉ, khung gỗ sồi, ván lót chắc chắn."},
+    {id:6,n:"Tủ quần áo Cánh Lùa",room:"Phòng ngủ",kind:"cabinet",mat:"MFC",w:"#9AA39A",wood:"#7C6A58",price:16800000,dim:"2000 x 600 x 2200 mm",d:"Cánh lùa êm, ray giảm chấn, MFC chống ẩm."},
+    {id:7,n:"Tab đầu giường Hộp",room:"Phòng ngủ",kind:"cabinet",mat:"Gỗ óc chó",w:"#9AA39A",wood:"#5A3A28",price:2900000,dim:"450 x 380 x 450 mm",d:"Một ngăn kéo, tay nắm đồng."},
+    {id:8,n:"Bàn ăn Mặt Đá 6 ghế",room:"Phòng ăn",kind:"table",mat:"Đá",w:"#C48A5A",wood:"#CFCBC2",price:19800000,dim:"1600 x 850 x 750 mm",d:"Mặt đá nung, chân thép sơn đen mờ."},
+    {id:9,n:"Ghế ăn Cong Lưng",room:"Phòng ăn",kind:"chair",mat:"Gỗ sồi",w:"#C48A5A",wood:"#B58B5A",price:1850000,dim:"480 x 520 x 810 mm",d:"Lưng uốn cong ôm người, đệm ngồi bọc vải."},
+    {id:10,n:"Tủ ly Ba Cánh",room:"Phòng ăn",kind:"cabinet",mat:"Gỗ sồi",w:"#C48A5A",wood:"#8B6B4A",price:11200000,dim:"1500 x 420 x 850 mm",d:"Ba cánh có kính mờ, đèn LED trong tủ."},
+    {id:11,n:"Bàn làm việc Hộc Kéo",room:"Văn phòng",kind:"desk",mat:"MFC",w:"#7D8A8F",wood:"#7C6A58",price:4600000,dim:"1400 x 700 x 750 mm",d:"Hộc kéo khóa, lỗ luồn dây, MFC phủ melamine."},
+    {id:12,n:"Kệ sách Khung Sắt",room:"Văn phòng",kind:"shelf",mat:"Kim loại",w:"#7D8A8F",wood:"#2E2A25",price:3700000,dim:"900 x 320 x 1800 mm",d:"Bốn tầng, tầng gỗ dày 25 mm, khung thép hàn."}
+  ];
+  var rooms=["Tất cả","Phòng khách","Phòng ngủ","Phòng ăn","Văn phòng"];
+  var mats=["Gỗ sồi","Gỗ óc chó","Vải bố","MFC","Đá","Kim loại"];
+  var state={room:"Tất cả",mat:null,sort:"def"};
+  var list=[];
+  try{var s=localStorage.getItem("mocnha-list");if(s)list=JSON.parse(s).filter(function(i){return P.some(function(p){return p.id===i})})}catch(e){}
+
+  var $=function(id){return document.getElementById(id)};
+  var vnd=function(n){return n.toLocaleString("vi-VN")+" ₫"};
+
+  /* ---------- illustrations ---------- */
+  function art(p){
+    var w=p.w,k=p.wood,s="";
+    var shadow='<ellipse cx="200" cy="244" rx="150" ry="9" fill="#000" opacity=".12"/>';
+    if(p.kind==="sofa")s='<rect x="64" y="112" width="272" height="84" rx="18" fill="'+w+'"/><rect x="48" y="160" width="304" height="60" rx="14" fill="'+w+'"/><rect x="36" y="138" width="38" height="86" rx="14" fill="'+w+'"/><rect x="326" y="138" width="38" height="86" rx="14" fill="'+w+'"/><path d="M200 168v50" stroke="#0003" stroke-width="2"/><rect x="62" y="222" width="10" height="20" fill="'+k+'"/><rect x="328" y="222" width="10" height="20" fill="'+k+'"/>';
+    if(p.kind==="chair")s='<rect x="146" y="94" width="108" height="76" rx="16" fill="'+k+'"/><rect x="136" y="168" width="128" height="18" rx="6" fill="'+w+'"/><rect x="146" y="186" width="10" height="56" fill="'+k+'"/><rect x="244" y="186" width="10" height="56" fill="'+k+'"/>';
+    if(p.kind==="table")s='<rect x="66" y="146" width="268" height="16" rx="5" fill="'+k+'"/><rect x="96" y="162" width="12" height="80" fill="#2E2A25"/><rect x="292" y="162" width="12" height="80" fill="#2E2A25"/><circle cx="200" cy="128" r="14" fill="'+w+'"/><rect x="198" y="132" width="4" height="14" fill="#2E2A25"/>';
+    if(p.kind==="bed")s='<rect x="58" y="84" width="284" height="96" rx="10" fill="'+w+'"/><rect x="58" y="172" width="284" height="48" rx="8" fill="'+k+'"/><rect x="70" y="150" width="260" height="34" rx="10" fill="#F1EEE8"/><rect x="82" y="136" width="90" height="24" rx="8" fill="#fff" opacity=".9"/><rect x="228" y="136" width="90" height="24" rx="8" fill="#fff" opacity=".9"/><rect x="66" y="220" width="12" height="22" fill="'+k+'"/><rect x="322" y="220" width="12" height="22" fill="'+k+'"/>';
+    if(p.kind==="cabinet")s='<rect x="56" y="116" width="288" height="112" rx="6" fill="'+k+'"/><path d="M152 116v112M248 116v112" stroke="#0004" stroke-width="2"/><rect x="140" y="160" width="6" height="26" rx="3" fill="'+w+'"/><rect x="154" y="160" width="6" height="26" rx="3" fill="'+w+'"/><rect x="240" y="160" width="6" height="26" rx="3" fill="'+w+'"/><rect x="254" y="160" width="6" height="26" rx="3" fill="'+w+'"/><rect x="72" y="228" width="10" height="16" fill="#2E2A25"/><rect x="318" y="228" width="10" height="16" fill="#2E2A25"/>';
+    if(p.kind==="desk")s='<rect x="56" y="138" width="288" height="12" rx="4" fill="'+k+'"/><rect x="76" y="150" width="86" height="88" fill="'+k+'" opacity=".92"/><path d="M76 180h86M76 210h86" stroke="#0004" stroke-width="2"/><rect x="316" y="150" width="12" height="92" fill="#2E2A25"/><rect x="248" y="96" width="70" height="42" rx="3" fill="'+w+'"/><rect x="278" y="136" width="10" height="4" fill="#2E2A25"/>';
+    if(p.kind==="lamp")s='<ellipse cx="200" cy="238" rx="46" ry="8" fill="'+k+'"/><rect x="197" y="96" width="6" height="142" fill="'+k+'"/><path d="M146 100l22-58h64l22 58z" fill="'+w+'"/>';
+    if(p.kind==="shelf")s='<rect x="120" y="40" width="10" height="204" fill="'+k+'"/><rect x="270" y="40" width="10" height="204" fill="'+k+'"/>'+[60,110,160,210].map(function(y){return '<rect x="120" y="'+y+'" width="160" height="10" fill="'+p.w+'"/>'}).join("")+'<rect x="138" y="86" width="14" height="24" fill="#B9785A"/><rect x="156" y="78" width="12" height="32" fill="#4D5E47"/><rect x="224" y="136" width="30" height="24" fill="#A98338"/><rect x="140" y="186" width="40" height="24" fill="#3B5058"/>';
+    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="var(--panel)"/><rect y="244" width="400" height="56" fill="var(--floor)"/>'+shadow+s+'</svg>';
+  }
+  function scene(a,b,c){ /* room backdrop for hero and projects */
+    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="var(--plaster)"/><rect x="40" y="36" width="130" height="150" fill="'+a+'" opacity=".9"/><rect x="190" y="60" width="90" height="70" fill="'+b+'" opacity=".85"/><rect y="236" width="400" height="64" fill="var(--floor)"/><ellipse cx="200" cy="262" rx="170" ry="16" fill="'+c+'" opacity=".35"/>'+c_items(c)+'</svg>';
+  }
+  function c_items(c){return '<rect x="70" y="170" width="200" height="56" rx="14" fill="#6F7F66"/><rect x="82" y="140" width="176" height="46" rx="14" fill="#6F7F66"/><rect x="60" y="188" width="30" height="46" rx="12" fill="#6F7F66"/><rect x="250" y="188" width="30" height="46" rx="12" fill="#6F7F66"/><rect x="300" y="196" width="64" height="12" rx="4" fill="#5A3A28"/><rect x="312" y="208" width="8" height="30" fill="#2E2A25"/><rect x="346" y="208" width="8" height="30" fill="#2E2A25"/><rect x="330" y="70" width="5" height="168" fill="#2E2A25"/><path d="M306 76l14-36h30l14 36z" fill="#C9B27C"/>'}
+
+  $("heroScene").innerHTML=scene("#B9C2B3","#C9B27C","#4D5E47");
+  function site(kind,col){ /* project site: building above ground, piles below */
+    var g="",i,x;
+    if(kind==="towers"){
+      g=[[70,70,70,170],[170,40,70,200],[260,90,64,150]].map(function(b){
+        var s='<rect x="'+b[0]+'" y="'+b[1]+'" width="'+b[2]+'" height="'+b[3]+'" fill="'+col+'" opacity=".85"/>',y,xx;
+        for(y=b[1]+10;y<b[1]+b[3]-12;y+=14)for(xx=b[0]+8;xx<b[0]+b[2]-8;xx+=12)s+='<rect x="'+xx+'" y="'+y+'" width="6" height="7" fill="#E6E9E4" opacity=".7"/>';
+        return s}).join("");
+    }else{
+      g='<path d="M30 236V150l50 24v-24l50 24v-24l50 24v-24l50 24v-24l50 24v62z" fill="'+col+'" opacity=".85"/><rect x="60" y="196" width="40" height="40" fill="#E6E9E4" opacity=".7"/>';
+    }
+    for(x=40;x<=360;x+=28)g+='<rect x="'+x+'" y="242" width="6" height="46" fill="var(--muted)" opacity=".55"/>';
+    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="var(--plaster)"/><rect y="236" width="400" height="64" fill="var(--floor)"/>'+g+'</svg>';
+  }
+  $("p1").innerHTML=site("towers","#1F7A43");
+  $("p2").innerHTML=site("towers","#14304F");
+  $("p3").innerHTML=site("factory","#14304F");
+
+  /* ---------- catalog ---------- */
+  function visible(){
+    var r=P.filter(function(p){return (state.room==="Tất cả"||p.room===state.room)&&(!state.mat||p.mat===state.mat)});
+    if(state.sort==="asc")r.sort(function(a,b){return a.price-b.price});
+    if(state.sort==="desc")r.sort(function(a,b){return b.price-a.price});
+    return r;
+  }
+  function renderRail(){
+    $("cats").innerHTML=rooms.map(function(r){
+      var c=r==="Tất cả"?P.length:P.filter(function(p){return p.room===r}).length;
+      return '<li><button type="button" data-room="'+r+'" aria-pressed="'+(state.room===r)+'"><span>'+r+'</span><small>'+c+'</small></button></li>';
+    }).join("");
+    $("mats").innerHTML=mats.map(function(m){return '<button type="button" class="chip" data-mat="'+m+'" aria-pressed="'+(state.mat===m)+'">'+m+'</button>'}).join("");
+  }
+  function renderGrid(){
+    var r=visible();
+    $("grid").innerHTML=r.length?r.map(function(p){
+      return '<article class="card"><button type="button" class="pic" data-open="'+p.id+'" aria-label="Xem '+p.n+'">'+art(p)+'</button><div><h3>'+p.n+'</h3><div class="meta">'+p.room+' · '+p.mat+'</div></div><div class="row"><span class="price">'+vnd(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'">'+(list.indexOf(p.id)>-1?"Đã thêm":"Thêm vào danh sách")+'</button></div></article>';
+    }).join(""):'<p class="empty">Chưa có sản phẩm khớp bộ lọc. Bỏ chọn vật liệu hoặc đổi phòng để xem thêm.</p>';
+  }
+  function save(){try{localStorage.setItem("mocnha-list",JSON.stringify(list))}catch(e){}}
+  function renderList(){
+    $("listCount").textContent=list.length;
+    var items=list.map(function(id){return P.filter(function(p){return p.id===id})[0]});
+    $("listItems").innerHTML=items.length?items.map(function(p){return '<li><span>'+p.n+'<br><small class="price">'+vnd(p.price)+'</small></span><button type="button" data-rm="'+p.id+'">Bỏ</button></li>'}).join(""):'<li style="border:0;color:var(--muted)">Chưa có món nào. Chọn sản phẩm rồi bấm "Thêm vào danh sách".</li>';
+    var total=items.reduce(function(s,p){return s+p.price},0);
+    $("listTotal").textContent=items.length?"Tạm tính: "+vnd(total):"";
+    $("msg").value=items.length?"Chào bạn, tôi muốn được tư vấn và báo giá các sản phẩm sau:\n"+items.map(function(p,i){return (i+1)+". "+p.n+" ("+p.dim+") - "+vnd(p.price)}).join("\n")+"\nTạm tính: "+vnd(total)+"\nTên và số điện thoại của tôi: ":"";
+  }
+  function toast(t){var el=$("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},2200)}
+  function toggle(id){
+    var i=list.indexOf(id);
+    if(i>-1){list.splice(i,1);toast("Đã bỏ khỏi danh sách")}else{list.push(id);toast("Đã thêm vào danh sách tư vấn")}
+    save();renderList();renderGrid();
+  }
+
+  /* ---------- events ---------- */
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("button");if(!t)return;
+    if(t.dataset.room){state.room=t.dataset.room;renderRail();renderGrid()}
+    else if(t.dataset.mat){state.mat=state.mat===t.dataset.mat?null:t.dataset.mat;renderRail();renderGrid()}
+    else if(t.dataset.add)toggle(+t.dataset.add);
+    else if(t.dataset.rm)toggle(+t.dataset.rm);
+    else if(t.dataset.open)openDetail(+t.dataset.open);
+    else if(t.hasAttribute("data-close")){$("detail").hidden=true;$("drawer").hidden=true}
+  });
+  $("sort").addEventListener("change",function(e){state.sort=e.target.value;renderGrid()});
+  $("openList").addEventListener("click",function(){$("drawer").hidden=false});
+  ["detail","drawer"].forEach(function(id){$(id).addEventListener("click",function(e){if(e.target===$(id))$(id).hidden=true})});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){$("detail").hidden=true;$("drawer").hidden=true}});
+  $("clearList").addEventListener("click",function(){list=[];save();renderList();renderGrid()});
+  $("copyMsg").addEventListener("click",function(){
+    var m=$("msg");if(!m.value){toast("Danh sách đang trống");return}
+    function fallback(){m.focus();m.select();toast("Đã chọn sẵn nội dung, hãy nhấn Ctrl+C hoặc giữ để sao chép")}
+    try{navigator.clipboard.writeText(m.value).then(function(){toast("Đã sao chép nội dung")},fallback)}catch(e){fallback()}
+  });
+  var cur=null;
+  function openDetail(id){
+    var p=P.filter(function(x){return x.id===id})[0];cur=p;
+    $("dPic").innerHTML=art(p);$("dTitle").textContent=p.n;$("dPrice").textContent=vnd(p.price);$("dDesc").textContent=p.d;
+    $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>24 tháng</dd>';
+    $("dAdd").textContent=list.indexOf(id)>-1?"Bỏ khỏi danh sách tư vấn":"Thêm vào danh sách tư vấn";
+    $("detail").hidden=false;
+  }
+  $("dAdd").addEventListener("click",function(){if(cur){toggle(cur.id);$("detail").hidden=true}});
+
+  renderRail();renderGrid();renderList();
+})();
+</script>
