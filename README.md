@@ -14,6 +14,10 @@ Website bán nội thất kết hợp thi công hoàn thiện. Trang tĩnh, khô
 | `favicon.svg`, `404.html`, `robots.txt` | Biểu tượng, trang lỗi, cấu hình công cụ tìm kiếm |
 | `.github/workflows/pages.yml` | Tự động đăng trang lên GitHub Pages mỗi khi đẩy lên `main` |
 
+## Hướng dẫn tự chỉnh sửa và vận hành
+
+Xem [docs/HUONG-DAN-VAN-HANH.md](docs/HUONG-DAN-VAN-HANH.md): cách sửa nội dung trên GitHub, thêm sản phẩm, đổi ảnh, đăng trang, dùng tên miền riêng, và dùng Claude khi không còn credits.
+
 ## Xem trang
 
 - Mở `index.html` bằng trình duyệt, hoặc
