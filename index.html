@@ -243,6 +243,7 @@
 <div class="toast" id="toast" hidden role="status"></div>
 
 <script src="products.js"></script>
+<script src="anh-that.js"></script>
 <script>
 (function(){
   /* ---------- data ---------- */
@@ -285,7 +286,7 @@
   function renderGrid(){
     var r=visible();
     $("grid").innerHTML=r.length?r.map(function(p){
-      return '<article class="card"><button type="button" class="pic" data-open="'+p.id+'" aria-label="Xem '+p.n+'">'+art(p)+'</button><div><h3>'+p.n+'</h3><div class="meta">'+p.room+' · '+p.mat+'</div><a class="more" href="san-pham.html?id='+p.id+'">Xem chi tiết</a></div><div class="row"><span class="price">'+vnd(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'">'+(list.indexOf(p.id)>-1?"Đã thêm":"Thêm vào danh sách")+'</button></div></article>';
+      return '<article class="card"><button type="button" class="pic" data-open="'+p.id+'" aria-label="Xem '+p.n+'">'+art(p)+window.mnPhoto(p)+'</button><div><h3>'+p.n+'</h3><div class="meta">'+p.room+' · '+p.mat+'</div><a class="more" href="san-pham.html?id='+p.id+'">Xem chi tiết</a></div><div class="row"><span class="price">'+vnd(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'">'+(list.indexOf(p.id)>-1?"Đã thêm":"Thêm vào danh sách")+'</button></div></article>';
     }).join(""):'<p class="empty">Chưa có sản phẩm khớp bộ lọc. Bỏ chọn vật liệu hoặc đổi phòng để xem thêm.</p>';
   }
   function save(){try{localStorage.setItem("mocnha-list",JSON.stringify(list))}catch(e){}}
@@ -337,7 +338,7 @@
   var cur=null;
   function openDetail(id){
     var p=P.filter(function(x){return x.id===id})[0];cur=p;
-    $("dPic").innerHTML=art(p);$("dTitle").textContent=p.n;$("dPrice").textContent=vnd(p.price);$("dDesc").textContent=p.d;
+    $("dPic").innerHTML=art(p)+window.mnPhoto(p);$("dTitle").textContent=p.n;$("dPrice").textContent=vnd(p.price);$("dDesc").textContent=p.d;
     $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>24 tháng</dd>'+(p.src?'<dt>Nguồn ý tưởng</dt><dd>'+p.src+'</dd>':'');
     $("dAdd").textContent=list.indexOf(id)>-1?"Bỏ khỏi danh sách tư vấn":"Thêm vào danh sách tư vấn";
     $("dMore").href="san-pham.html?id="+id;

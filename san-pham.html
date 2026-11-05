@@ -108,6 +108,7 @@
 <div class="toast" id="toast" hidden role="status"></div>
 
 <script src="products.js"></script>
+<script src="anh-that.js"></script>
 <script src="product-details.js"></script>
 <script>
 (function(){
@@ -156,6 +157,7 @@
     }else if(mode==="detail"){
       h=h.replace('viewBox="0 0 400 300"','viewBox="110 96 180 135"');
     }
+    if(mode==="front")h+=window.mnPhoto(p);
     return h;
   }
   function drawViews(){
@@ -197,7 +199,7 @@
   var rel=P.filter(function(x){return x.room===p.room&&x.id!==p.id}).slice(0,4);
   if(rel.length<4)rel=rel.concat(P.filter(function(x){return x.room!==p.room&&x.mat===p.mat&&x.id!==p.id}).slice(0,4-rel.length));
   $("rel").innerHTML=rel.map(function(x){
-    return '<article class="card"><a class="pic" href="san-pham.html?id='+x.id+'" aria-label="Xem '+esc(x.n)+'">'+art(x)+'</a><div><h3><a href="san-pham.html?id='+x.id+'">'+esc(x.n)+'</a></h3><div class="meta">'+esc(x.room)+' · '+esc(x.mat)+'</div></div><div class="row"><span class="price">'+vnd(x.price)+'</span></div></article>';
+    return '<article class="card"><a class="pic" href="san-pham.html?id='+x.id+'" aria-label="Xem '+esc(x.n)+'">'+art(x)+window.mnPhoto(x)+'</a><div><h3><a href="san-pham.html?id='+x.id+'">'+esc(x.n)+'</a></h3><div class="meta">'+esc(x.room)+' · '+esc(x.mat)+'</div></div><div class="row"><span class="price">'+vnd(x.price)+'</span></div></article>';
   }).join("");
   if(!rel.length)$("relBox").hidden=true;
 
