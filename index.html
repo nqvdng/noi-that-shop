@@ -49,7 +49,7 @@
         <a class="btn" href="#du-an">Xem dự án đã thi công</a>
       </div>
       <div class="facts">
-        <div><b>Bảo hành 24 tháng</b>khung gỗ và phụ kiện</div>
+        <div><b>Bảo hành 12 đến 36 tháng</b>khung gỗ và phụ kiện</div>
         <div><b>Giao lắp 7–21 ngày</b>tùy mẫu có sẵn hay đặt làm</div>
       </div>
     </div>
@@ -141,7 +141,7 @@
       <li><h3>Thiết kế và báo giá</h3><p>Bản vẽ phối cảnh và bảng khối lượng, giá ghi rõ từng hạng mục.</p></li>
       <li><h3>Sản xuất</h3><p>Gia công tại xưởng, kiểm tra từng mẻ trước khi giao.</p></li>
       <li><h3>Lắp đặt</h3><p>Đội thi công lắp tại công trình, vệ sinh sau khi xong.</p></li>
-      <li><h3>Bảo hành</h3><p>Phiếu bảo hành 24 tháng, có hotline xử lý lỗi.</p></li>
+      <li><h3>Bảo hành</h3><p>Phiếu bảo hành 12 đến 36 tháng tùy sản phẩm, có hotline xử lý lỗi.</p></li>
     </ol>
   </section>
 
@@ -244,6 +244,7 @@
 
 <script src="products.js"></script>
 <script src="anh-that.js"></script>
+<script src="bao-hanh.js"></script>
 <script>
 (function(){
   /* ---------- data ---------- */
@@ -339,7 +340,7 @@
   function openDetail(id){
     var p=P.filter(function(x){return x.id===id})[0];cur=p;
     $("dPic").innerHTML=art(p)+window.mnPhoto(p);$("dTitle").textContent=p.n;$("dPrice").textContent=vnd(p.price);$("dDesc").textContent=p.d;
-    $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>24 tháng</dd>'+(p.src?'<dt>Nguồn ý tưởng</dt><dd>'+p.src+'</dd>':'');
+    $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>'+window.mnWarranty(p.kind)+' tháng (mẫu)</dd>'+(p.src?'<dt>Nguồn ý tưởng</dt><dd>'+p.src+'</dd>':'');
     $("dAdd").textContent=list.indexOf(id)>-1?"Bỏ khỏi danh sách tư vấn":"Thêm vào danh sách tư vấn";
     $("dMore").href="san-pham.html?id="+id;
     $("detail").hidden=false;

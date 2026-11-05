@@ -40,7 +40,7 @@ Chưa nối thì biểu mẫu vẫn dùng được: khách bấm gửi sẽ nh�
 
 Làm theo từng bước trong `docs/google-apps-script.md` (khoảng 15 phút). Tóm tắt:
 1. Tạo Google Sheet.
-2. Tiện ích mở rộng > Apps Script, dán mã, sửa dòng `EMAIL_NHAN`.
+2. Tiện ích mở rộng > Apps Script, dán mã (bản này không gửi email).
 3. Chạy hàm `thuNghiem` để cấp quyền.
 4. Triển khai thành Ứng dụng web (chạy dưới dạng Tôi, ai cũng truy cập được), sao chép URL kết thúc bằng `/exec`.
 5. Dán URL vào `config.js`, dòng `FORM_ENDPOINT`, rồi Commit.
@@ -177,7 +177,7 @@ Tải repo: **Code > Download ZIP**, giải nén. Bấm đúp `index.html` để
 | Bấm sản phẩm báo "Không tìm thấy sản phẩm" | `id` trong đường dẫn không có trong `products.js`. Kiểm tra `id` của sản phẩm |
 | Sản phẩm mới có hình trống | `kind` gõ sai. Dùng đúng một tên trong danh sách ở mục 3.2 |
 | Biểu mẫu báo "Chưa gửi được" hoặc Sheet không có dòng mới | Kiểm tra `FORM_ENDPOINT` trong `config.js` đúng URL kết thúc `/exec`. Mở URL đó thử, phải thấy `"ok":true`. Sửa mã Apps Script mà chưa Triển khai lại thì chưa có hiệu lực |
-| Không nhận email thông báo | Xem thư mục Spam. Kiểm tra `EMAIL_NHAN` trong Apps Script |
+| Không nhận email thông báo | Bản script hiện không gửi email. Mở bảng tính xem dòng mới, hoặc đặt Công cụ > Quy tắc thông báo |
 | Bị gửi thư rác vào Sheet | Xem mục "Thư rác" ở `docs/google-apps-script.md` |
 | Ảnh không hiện | Kiểm tra tên tệp đúng chữ hoa, chữ thường, đúng đuôi `.jpg`, đúng thư mục |
 | Chữ hiển thị phông lạ | Phông tải từ Google Fonts. Khi mạng chặn, trình duyệt dùng phông thay thế, nội dung vẫn đọc được |

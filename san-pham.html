@@ -109,6 +109,7 @@
 
 <script src="products.js"></script>
 <script src="anh-that.js"></script>
+<script src="bao-hanh.js"></script>
 <script src="product-details.js"></script>
 <script>
 (function(){
@@ -193,7 +194,7 @@
   $("pdFinish").textContent=mi.finish||"Hoàn thiện theo mẫu vật liệu bạn chọn khi đặt.";
   $("pdExtra").innerHTML=(dt.extra||[]).map(function(t){return "<li>"+esc(t)+"</li>"}).join("");
   $("pdCare").innerHTML=(mi.care||["Lau khăn khô hoặc hơi ẩm, tránh hóa chất tẩy mạnh."]).map(function(t){return "<li>"+esc(t)+"</li>"}).join("");
-  $("pdWar").innerHTML='<dt>Bảo hành</dt><dd>'+esc(pick("warranty"))+'</dd><dt>Thời gian làm</dt><dd>'+esc(pick("lead"))+'</dd><dt>Giao và lắp</dt><dd>'+esc(pick("delivery"))+'</dd>';
+  $("pdWar").innerHTML='<dt>Bảo hành</dt><dd>'+esc(dt.warranty||(window.mnWarranty(p.kind)+" tháng cho khung và mối ghép (mẫu)"))+'</dd><dt>Thời gian làm</dt><dd>'+esc(pick("lead"))+'</dd><dt>Giao và lắp</dt><dd>'+esc(pick("delivery"))+'</dd>';
   /* sản phẩm không có phần bọc thì vẫn cho chọn màu phụ, nên không ẩn ô màu */
 
   var rel=P.filter(function(x){return x.room===p.room&&x.id!==p.id}).slice(0,4);
