@@ -8,6 +8,8 @@ Website bán nội thất kết hợp thi công hoàn thiện. Trang tĩnh, khô
 |---|---|
 | `index.html` | Trang chủ: sản phẩm, công trình, bản vẽ, tin tức, liên hệ |
 | `vat-lieu.html` | Trang Vật liệu và phụ kiện: gỗ thịt, gỗ nhân tạo, tấm phủ, da và vải bọc, đá, kính, kim loại, phụ kiện; chọn mẫu để gửi đặt mẫu |
+| `san-pham.html`, `product-details.js` | Trang chi tiết sản phẩm (đọc `?id=`) và thông tin chi tiết theo vật liệu, theo id |
+| `bao-gia.html`, `bao-gia.js`, `bao-gia.css`, `config.js` | Biểu mẫu nhận yêu cầu báo giá và cấu hình |
 | `styles.css` | Giao diện dùng chung cho các trang |
 | `assets/du-an/` | Ảnh công trình đang thi công (đã cắt bỏ dòng địa chỉ và giờ chụp) |
 | `assets/ban-ve/` | Ảnh phối cảnh và bảng vật liệu lấy từ bộ shop drawing |
@@ -52,4 +54,4 @@ Lưu ý: trang đăng bằng Pages là công khai dù repo ở chế độ riên
 - Thay hình sản phẩm minh họa bằng ảnh thật.
 - Kiểm tra số Zalo `0905 006 046` có dùng được không.
 - Thông báo website bán hàng với Bộ Công Thương nếu bán hàng trực tuyến.
-- Thêm trang chi tiết riêng cho từng sản phẩm và biểu mẫu nhận yêu cầu báo giá.
+- Nối biểu mẫu báo giá với Google Sheet: `docs/google-apps-script.md`.
