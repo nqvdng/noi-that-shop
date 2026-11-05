@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Chi tiết sản phẩm | Mộc Nhà Nội Thất</title>
+<meta name="description" content="Xem kích thước, vật liệu, màu sắc và bảo hành của sản phẩm nội thất tại Mộc Nhà.">
+<meta name="theme-color" content="#1F7A43">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Chi tiết sản phẩm | Mộc Nhà Nội Thất">
+<meta property="og:description" content="Xem kích thước, vật liệu, màu sắc và bảo hành của sản phẩm nội thất tại Mộc Nhà.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Mộc<span> Nhà</span></a>
+    <nav class="nav" aria-label="Chính">
+      <a href="index.html#san-pham">Sản phẩm</a>
+      <a href="index.html#cong-trinh">Công trình</a>
+      <a href="index.html#ban-ve">Bản vẽ</a>
+      <a href="vat-lieu.html">Vật liệu và phụ kiện</a>
+      <a href="index.html#tin-tuc">Tin tức</a>
+      <a href="index.html#quy-trinh">Quy trình</a>
+      <a href="index.html#lien-he">Liên hệ</a>
+    </nav>
+    <a class="btn" href="index.html#danh-sach"><span class="t">Danh sách tư vấn</span><span class="count" id="listCount">0</span></a>
+  </div>
+</header>
+
+<main class="wrap pd-wrap" id="top">
+  <nav class="crumbs" aria-label="Đường dẫn" id="crumbs"></nav>
+
+  <div id="missing" hidden class="pd-missing">
+    <h1>Không tìm thấy sản phẩm</h1>
+    <p>Đường dẫn có thể đã cũ hoặc sản phẩm đã ngừng bán. Hãy quay lại danh mục để chọn món khác.</p>
+    <p><a class="btn solid" href="index.html#san-pham">Về danh mục sản phẩm</a></p>
+  </div>
+
+  <article id="product" hidden>
+    <div class="pd">
+      <div class="pd-gallery">
+        <div class="pd-main" id="pdMain" role="img" aria-live="polite"></div>
+        <div class="pd-thumbs" id="pdThumbs" role="group" aria-label="Chọn góc nhìn"></div>
+        <p class="pd-note">Hình minh họa vẽ tay bằng SVG, chưa phải ảnh thật của sản phẩm.</p>
+      </div>
+      <div class="pd-info">
+        <p class="pd-room" id="pdRoom"></p>
+        <h1 id="pdTitle"></h1>
+        <p class="price pd-price" id="pdPrice"></p>
+        <p class="pd-desc" id="pdDesc"></p>
+
+        <div class="pd-opt" id="pdFabricBox">
+          <h2>Màu phần bọc hoặc phụ: <span id="fabricName"></span></h2>
+          <div class="swatches" id="pdFabric" role="group" aria-label="Màu phần bọc hoặc phụ"></div>
+        </div>
+        <div class="pd-opt">
+          <h2>Màu gỗ hoặc khung: <span id="woodName"></span></h2>
+          <div class="swatches" id="pdWood" role="group" aria-label="Màu gỗ hoặc khung"></div>
+        </div>
+
+        <div class="pd-actions">
+          <button class="btn solid" type="button" id="pdAdd">Thêm vào danh sách tư vấn</button>
+          <a class="btn" id="pdQuote" href="bao-gia.html">Gửi yêu cầu tư vấn</a>
+        </div>
+        <p class="pd-small">Giá là giá mẫu, chưa gồm vận chuyển và lắp đặt. Giá thật phụ thuộc kích thước, vật liệu và màu bạn chọn.</p>
+      </div>
+    </div>
+
+    <div class="pd-cols">
+      <section aria-labelledby="hSpec">
+        <h2 id="hSpec">Thông số</h2>
+        <dl class="spec" id="pdSpec"></dl>
+      </section>
+      <section aria-labelledby="hMat">
+        <h2 id="hMat">Vật liệu và hoàn thiện</h2>
+        <p id="pdFinish"></p>
+        <ul class="pd-list" id="pdExtra"></ul>
+        <p><a href="vat-lieu.html">Xem bảng vật liệu và phụ kiện</a></p>
+      </section>
+      <section aria-labelledby="hCare">
+        <h2 id="hCare">Bảo quản</h2>
+        <ul class="pd-list" id="pdCare"></ul>
+      </section>
+      <section aria-labelledby="hWar">
+        <h2 id="hWar">Bảo hành và giao hàng</h2>
+        <dl class="spec" id="pdWar"></dl>
+      </section>
+    </div>
+
+    <section class="pd-rel" aria-labelledby="hRel" id="relBox">
+      <h2 id="hRel">Sản phẩm cùng phòng</h2>
+      <div class="grid" id="rel"></div>
+    </section>
+  </article>
+</main>
+
+<footer class="wrap">Bản mẫu website. Tên cửa hàng "Mộc Nhà", giá, kích thước, bảo hành và hình sản phẩm là nội dung giả định, cần thay bằng số liệu thật trước khi dùng thật. <a href="index.html#lien-he">Thông tin liên hệ</a></footer>
+
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script src="products.js"></script>
+<script src="product-details.js"></script>
+<script>
+(function(){
+  var P=window.MN_PRODUCTS,art=window.mnArt,MI=window.MN_MAT_INFO||{},DD=window.MN_DEFAULT_DETAIL||{},DT=window.MN_DETAILS||{};
+  var $=function(id){return document.getElementById(id)};
+  var vnd=function(n){return n.toLocaleString("vi-VN")+" ₫"};
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+
+  var id=parseInt(new URLSearchParams(location.search).get("id"),10);
+  var p=P.filter(function(x){return x.id===id})[0];
+
+  var list=[];
+  try{var s=localStorage.getItem("mocnha-list");if(s)list=JSON.parse(s).filter(function(i){return P.some(function(x){return x.id===i})})}catch(e){}
+  function save(){try{localStorage.setItem("mocnha-list",JSON.stringify(list))}catch(e){}}
+  function toast(t){var el=$("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},2200)}
+  function count(){$("listCount").textContent=list.length}
+  count();
+
+  if(!p){$("missing").hidden=false;document.title="Không tìm thấy sản phẩm | Mộc Nhà Nội Thất";return}
+
+  var mi=MI[p.mat]||{},dt=DT[p.id]||{};
+  function pick(k){return dt[k]||DD[k]}
+  var cur={w:p.w,wood:p.wood,view:0};
+
+  /* ---------- tiêu đề, mô tả cho trang ---------- */
+  var desc=p.n+": "+p.d+" "+p.dim+". Giá mẫu từ "+vnd(p.price)+".";
+  document.title=p.n+" | Mộc Nhà Nội Thất";
+  [["meta[name=description]",desc],["meta[property='og:title']",p.n+" | Mộc Nhà Nội Thất"],["meta[property='og:description']",desc]].forEach(function(a){
+    var m=document.querySelector(a[0]);if(m)m.setAttribute("content",a[1]);
+  });
+
+  /* ---------- hình ---------- */
+  var views=[["Mặt trước","front"],["Góc nghiêng","angle"],["Chi tiết vật liệu","detail"]];
+  function svg(mode){
+    var q={};for(var k in p)q[k]=p[k];q.w=cur.w;q.wood=cur.wood;
+    var h=art(q);
+    if(mode==="angle"){
+      h=h.replace(/(<ellipse cx="200" cy="244"[^>]*\/>)/,'$1<g transform="translate(36 0) skewX(-9) scale(.96 1)">').replace("</svg>","</g></svg>");
+    }else if(mode==="detail"){
+      h=h.replace('viewBox="0 0 400 300"','viewBox="110 96 180 135"');
+    }
+    return h;
+  }
+  function drawViews(){
+    $("pdMain").innerHTML=svg(views[cur.view][1]);
+    $("pdMain").setAttribute("aria-label",p.n+", "+views[cur.view][0].toLowerCase());
+    $("pdThumbs").innerHTML=views.map(function(v,i){
+      return '<button type="button" data-view="'+i+'" aria-pressed="'+(cur.view===i)+'" aria-label="'+v[0]+'"><span class="th">'+svg(v[1])+'</span><span>'+v[0]+'</span></button>';
+    }).join("");
+  }
+
+  /* ---------- màu ---------- */
+  function swatches(boxId,arr,key,nameId){
+    var box=$(boxId);
+    box.innerHTML=arr.map(function(c){
+      return '<button type="button" class="sw-btn" data-key="'+key+'" data-c="'+c[1]+'" data-n="'+esc(c[0])+'" aria-pressed="'+(cur[key]===c[1])+'" aria-label="'+esc(c[0])+'" style="--c:'+c[1]+'"></button>';
+    }).join("");
+    var sel=arr.filter(function(c){return c[1]===cur[key]})[0];
+    $(nameId).textContent=sel?sel[0]:"theo mẫu";
+  }
+  var fabrics=pick("fabrics")||[],woods=(dt.woods||mi.woods||[]);
+  function ensure(arr,c,label){return arr.some(function(x){return x[1]===c})?arr:[[label,c]].concat(arr)}
+  fabrics=ensure(fabrics,p.w,"Màu mẫu");woods=ensure(woods,p.wood,"Màu mẫu");
+  function drawSw(){swatches("pdFabric",fabrics,"w","fabricName");swatches("pdWood",woods,"wood","woodName")}
+
+  /* ---------- nội dung ---------- */
+  $("crumbs").innerHTML='<a href="index.html">Trang chủ</a><span aria-hidden="true">/</span><a href="index.html#san-pham">Sản phẩm</a><span aria-hidden="true">/</span><span>'+esc(p.room)+'</span>';
+  $("pdRoom").textContent=p.room+" · "+p.mat;
+  $("pdTitle").textContent=p.n;
+  $("pdPrice").textContent=vnd(p.price)+" (giá mẫu)";
+  $("pdDesc").textContent=p.d;
+  $("pdQuote").href="bao-gia.html?id="+p.id;
+  $("pdSpec").innerHTML='<dt>Kích thước</dt><dd>'+esc(p.dim)+'</dd><dt>Vật liệu chính</dt><dd>'+esc(p.mat)+'</dd><dt>Phòng</dt><dd>'+esc(p.room)+'</dd><dt>Mã sản phẩm</dt><dd>MN-'+String(p.id).padStart(3,"0")+'</dd>'+(p.src?'<dt>Nguồn ý tưởng</dt><dd>'+esc(p.src)+'</dd>':"");
+  $("pdFinish").textContent=mi.finish||"Hoàn thiện theo mẫu vật liệu bạn chọn khi đặt.";
+  $("pdExtra").innerHTML=(dt.extra||[]).map(function(t){return "<li>"+esc(t)+"</li>"}).join("");
+  $("pdCare").innerHTML=(mi.care||["Lau khăn khô hoặc hơi ẩm, tránh hóa chất tẩy mạnh."]).map(function(t){return "<li>"+esc(t)+"</li>"}).join("");
+  $("pdWar").innerHTML='<dt>Bảo hành</dt><dd>'+esc(pick("warranty"))+'</dd><dt>Thời gian làm</dt><dd>'+esc(pick("lead"))+'</dd><dt>Giao và lắp</dt><dd>'+esc(pick("delivery"))+'</dd>';
+  /* sản phẩm không có phần bọc thì vẫn cho chọn màu phụ, nên không ẩn ô màu */
+
+  var rel=P.filter(function(x){return x.room===p.room&&x.id!==p.id}).slice(0,4);
+  if(rel.length<4)rel=rel.concat(P.filter(function(x){return x.room!==p.room&&x.mat===p.mat&&x.id!==p.id}).slice(0,4-rel.length));
+  $("rel").innerHTML=rel.map(function(x){
+    return '<article class="card"><a class="pic" href="san-pham.html?id='+x.id+'" aria-label="Xem '+esc(x.n)+'">'+art(x)+'</a><div><h3><a href="san-pham.html?id='+x.id+'">'+esc(x.n)+'</a></h3><div class="meta">'+esc(x.room)+' · '+esc(x.mat)+'</div></div><div class="row"><span class="price">'+vnd(x.price)+'</span></div></article>';
+  }).join("");
+  if(!rel.length)$("relBox").hidden=true;
+
+  function addLabel(){$("pdAdd").textContent=list.indexOf(p.id)>-1?"Bỏ khỏi danh sách tư vấn":"Thêm vào danh sách tư vấn"}
+  $("pdAdd").addEventListener("click",function(){
+    var i=list.indexOf(p.id);
+    if(i>-1){list.splice(i,1);toast("Đã bỏ khỏi danh sách")}else{list.push(p.id);toast("Đã thêm vào danh sách tư vấn")}
+    save();count();addLabel();
+  });
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("button");if(!b)return;
+    if(b.dataset.view!==undefined){cur.view=+b.dataset.view;drawViews()}
+    else if(b.dataset.key){cur[b.dataset.key]=b.dataset.c;drawViews();drawSw()}
+  });
+
+  $("product").hidden=false;
+  drawViews();drawSw();addLabel();
+})();
+</script>
+</body>
+</html>

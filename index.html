@@ -185,7 +185,7 @@
       <p class="price" id="dPrice"></p>
       <p id="dDesc" style="color:var(--muted)"></p>
       <dl class="spec" id="dSpec"></dl>
-      <button class="btn solid" type="button" id="dAdd">Thêm vào danh sách tư vấn</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn solid" type="button" id="dAdd">Thêm vào danh sách tư vấn</button><a class="btn" id="dMore" href="san-pham.html">Xem trang chi tiết</a></div>
     </div>
   </div>
 </div>
@@ -275,7 +275,7 @@
   function renderGrid(){
     var r=visible();
     $("grid").innerHTML=r.length?r.map(function(p){
-      return '<article class="card"><button type="button" class="pic" data-open="'+p.id+'" aria-label="Xem '+p.n+'">'+art(p)+'</button><div><h3>'+p.n+'</h3><div class="meta">'+p.room+' · '+p.mat+'</div></div><div class="row"><span class="price">'+vnd(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'">'+(list.indexOf(p.id)>-1?"Đã thêm":"Thêm vào danh sách")+'</button></div></article>';
+      return '<article class="card"><button type="button" class="pic" data-open="'+p.id+'" aria-label="Xem '+p.n+'">'+art(p)+'</button><div><h3>'+p.n+'</h3><div class="meta">'+p.room+' · '+p.mat+'</div><a class="more" href="san-pham.html?id='+p.id+'">Xem chi tiết</a></div><div class="row"><span class="price">'+vnd(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'">'+(list.indexOf(p.id)>-1?"Đã thêm":"Thêm vào danh sách")+'</button></div></article>';
     }).join(""):'<p class="empty">Chưa có sản phẩm khớp bộ lọc. Bỏ chọn vật liệu hoặc đổi phòng để xem thêm.</p>';
   }
   function save(){try{localStorage.setItem("mocnha-list",JSON.stringify(list))}catch(e){}}
@@ -329,11 +329,13 @@
     $("dPic").innerHTML=art(p);$("dTitle").textContent=p.n;$("dPrice").textContent=vnd(p.price);$("dDesc").textContent=p.d;
     $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>24 tháng</dd>'+(p.src?'<dt>Nguồn ý tưởng</dt><dd>'+p.src+'</dd>':'');
     $("dAdd").textContent=list.indexOf(id)>-1?"Bỏ khỏi danh sách tư vấn":"Thêm vào danh sách tư vấn";
+    $("dMore").href="san-pham.html?id="+id;
     $("detail").hidden=false;
   }
   $("dAdd").addEventListener("click",function(){if(cur){toggle(cur.id);$("detail").hidden=true}});
 
   renderRail();renderGrid();renderList();
+  if(location.hash==="#danh-sach")$("drawer").hidden=false;
 })();
 </script>
 </body>
