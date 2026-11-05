@@ -242,8 +242,11 @@
   /* ---------- data ---------- */
   var P=window.MN_PRODUCTS,art=window.mnArt;
 
-  var rooms=["Tất cả","Phòng khách","Phòng ngủ","Phòng ăn","Văn phòng","Sân vườn","Xưởng"];
-  var mats=["Gỗ sồi","Gỗ óc chó","Gỗ anh đào","Gỗ tếch","Vải bố","MFC","Đá","Kim loại"];
+  /* Phòng và vật liệu lấy tự động từ products.js: thêm sản phẩm với giá trị mới là bộ lọc tự có. */
+  var roomOrder=["Phòng khách","Phòng ngủ","Phòng ăn","Bếp","Phòng tắm","Văn phòng","Trẻ em","Sân vườn","Xưởng"];
+  var rooms=["Tất cả"].concat(roomOrder.filter(function(r){return P.some(function(p){return p.room===r})}),
+    P.map(function(p){return p.room}).filter(function(r,i,a){return roomOrder.indexOf(r)<0&&a.indexOf(r)===i}));
+  var mats=P.map(function(p){return p.mat}).filter(function(m,i,a){return a.indexOf(m)===i});
   var state={room:"Tất cả",mat:null,sort:"def"};
   var list=[];
   try{var s=localStorage.getItem("mocnha-list");if(s)list=JSON.parse(s).filter(function(i){return P.some(function(p){return p.id===i})})}catch(e){}
