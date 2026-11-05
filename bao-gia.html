@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nhận báo giá nội thất | Mộc Nhà Nội Thất</title>
+<meta name="description" content="Gửi yêu cầu báo giá nội thất và thi công hoàn thiện. Mộc Nhà phản hồi qua điện thoại hoặc email.">
+<meta name="theme-color" content="#1F7A43">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nhận báo giá nội thất | Mộc Nhà Nội Thất">
+<meta property="og:description" content="Gửi yêu cầu báo giá nội thất và thi công hoàn thiện. Mộc Nhà phản hồi qua điện thoại hoặc email.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="bao-gia.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Mộc<span> Nhà</span></a>
+    <nav class="nav" aria-label="Chính">
+      <a href="index.html#san-pham">Sản phẩm</a>
+      <a href="index.html#cong-trinh">Công trình</a>
+      <a href="index.html#ban-ve">Bản vẽ</a>
+      <a href="vat-lieu.html">Vật liệu và phụ kiện</a>
+      <a href="index.html#tin-tuc">Tin tức</a>
+      <a href="index.html#quy-trinh">Quy trình</a>
+      <a href="index.html#lien-he">Liên hệ</a>
+    </nav>
+    <a class="btn" href="index.html#danh-sach"><span class="t">Danh sách tư vấn</span><span class="count" id="listCount">0</span></a>
+  </div>
+</header>
+
+<main class="wrap bg-wrap" id="top">
+  <div class="bg-head">
+    <h1>Nhận báo giá</h1>
+    <p>Điền thông tin ngắn gọn, chúng tôi sẽ gọi hoặc nhắn lại để tư vấn và gửi báo giá. Ô có dấu sao là bắt buộc.</p>
+  </div>
+
+  <div class="bg-grid">
+    <form id="qform" novalidate>
+      <div class="err-sum" id="errSum" role="alert" hidden></div>
+
+      <div class="f"><label for="name">Họ tên *</label>
+        <input id="name" name="name" type="text" autocomplete="name" maxlength="80" aria-describedby="e-name"><p class="e" id="e-name"></p></div>
+      <div class="f2">
+        <div class="f"><label for="phone">Số điện thoại *</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Ví dụ 0905 xxx xxx" aria-describedby="e-phone"><p class="e" id="e-phone"></p></div>
+        <div class="f"><label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="120" aria-describedby="e-email"><p class="e" id="e-email"></p></div>
+      </div>
+
+      <div class="f2">
+        <div class="f"><label for="type">Loại công trình *</label>
+          <select id="type" name="type" aria-describedby="e-type">
+            <option value="">Chọn loại</option><option>Căn hộ</option><option>Nhà phố</option><option>Biệt thự</option><option>Văn phòng</option><option>Cửa hàng hoặc nhà hàng</option><option>Khách sạn</option><option>Khác</option>
+          </select><p class="e" id="e-type"></p></div>
+        <div class="f"><label for="area">Diện tích (m²)</label>
+          <input id="area" name="area" type="number" inputmode="decimal" min="1" max="100000" step="any" aria-describedby="e-area"><p class="e" id="e-area"></p></div>
+      </div>
+
+      <div class="f"><label for="budget">Ngân sách tham khảo</label>
+        <select id="budget" name="budget">
+          <option value="">Chưa xác định</option><option>Dưới 50 triệu</option><option>50 đến 150 triệu</option><option>150 đến 300 triệu</option><option>300 đến 700 triệu</option><option>Trên 700 triệu</option>
+        </select></div>
+
+      <fieldset class="f"><legend>Bạn cần gì?</legend>
+        <div class="checks" id="needs"></div></fieldset>
+
+      <fieldset class="f"><legend>Sản phẩm quan tâm</legend>
+        <div class="chips" id="picked"></div>
+        <div class="addrow"><label class="sr" for="addProd">Thêm sản phẩm</label>
+          <select id="addProd"><option value="">Thêm sản phẩm khác...</option></select></div></fieldset>
+
+      <fieldset class="f"><legend>Vật liệu quan tâm</legend>
+        <div class="checks" id="mats"></div>
+        <p class="hint" id="sampleHint" hidden></p></fieldset>
+
+      <div class="f"><label for="note">Ghi chú</label>
+        <textarea id="note" name="note" rows="4" maxlength="1000" placeholder="Địa điểm, thời gian dự kiến, kích thước, phong cách mong muốn..."></textarea></div>
+
+      <div class="hp" aria-hidden="true"><label for="website">Không điền ô này</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+      <div class="f"><label class="check"><input id="agree" name="agree" type="checkbox" aria-describedby="e-agree"><span>Tôi đồng ý để Mộc Nhà dùng thông tin trên để liên hệ và gửi báo giá. *</span></label><p class="e" id="e-agree"></p></div>
+
+      <button class="btn solid" type="submit" id="send">Gửi yêu cầu</button>
+      <p class="hint">Thông tin chỉ dùng để liên hệ báo giá. Bạn có thể yêu cầu xóa bất cứ lúc nào qua email hoặc Zalo ở phần liên hệ.</p>
+    </form>
+
+    <aside class="bg-side" aria-label="Cách khác để liên hệ">
+      <h2>Muốn nói chuyện ngay?</h2>
+      <p>Gọi hoặc nhắn Zalo cho chúng tôi. Giờ làm việc và số điện thoại ở phần liên hệ của trang chủ.</p>
+      <p><a class="btn" id="zaloSide" href="https://zalo.me/84905006046" target="_blank" rel="noopener">Nhắn Zalo</a></p>
+      <h3>Sau khi gửi</h3>
+      <ol class="bg-list"><li>Chúng tôi gọi lại để hỏi thêm về công trình.</li><li>Gửi báo giá sơ bộ kèm bản vẽ hoặc phương án.</li><li>Hẹn khảo sát và chốt vật liệu, mẫu.</li></ol>
+      <p class="hint">Báo giá trên website là giá mẫu. Giá thật tính theo kích thước, vật liệu và điều kiện thi công.</p>
+    </aside>
+  </div>
+
+  <section class="bg-done" id="done" hidden aria-live="polite" tabindex="-1">
+    <h2 id="doneTitle"></h2>
+    <p id="doneText"></p>
+    <textarea id="outMsg" readonly aria-label="Nội dung yêu cầu" hidden></textarea>
+    <div class="bg-actions">
+      <button class="btn solid" type="button" id="copyMsg" hidden>Sao chép nội dung</button>
+      <a class="btn" id="zaloBtn" href="#" target="_blank" rel="noopener" hidden>Mở Zalo</a>
+      <a class="btn" id="mailBtn" href="#" hidden>Gửi bằng email</a>
+      <a class="btn" href="index.html#san-pham">Xem thêm sản phẩm</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">Bản mẫu website. Tên cửa hàng "Mộc Nhà", giá và kích thước sản phẩm là nội dung giả định, cần thay bằng số liệu thật trước khi dùng thật. <a href="index.html#lien-he">Thông tin liên hệ</a></footer>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="bao-gia.js"></script>
+</body>
+</html>
