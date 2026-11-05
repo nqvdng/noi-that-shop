@@ -114,6 +114,34 @@ select{font:inherit;background:var(--paper);color:var(--walnut);border:1px solid
 .contact ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 footer{padding-block:24px;color:var(--muted);font-size:.85rem}
 
+/* gallery, drawings, news */
+.gal{columns:3 260px;column-gap:14px}
+.gal button{display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:var(--panel);border-radius:4px;overflow:hidden;break-inside:avoid}
+.gal img{display:block;width:100%;height:auto;transition:transform .35s}
+.gal button:hover img{transform:scale(1.03)}
+.drawings{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:32px}
+.dwg{margin:0;min-width:0}
+.dwg.wide{grid-column:1/-1}
+.dwg img{display:block;width:100%;height:auto;border-radius:4px;background:#fff}
+.dwg figcaption{margin-top:8px;font-size:.9rem;color:var(--muted)}
+.dwg-info{display:grid;grid-template-columns:1fr 1.2fr 1.4fr;gap:28px;align-items:start}
+.dwg-info h3{font-size:1rem;margin-bottom:10px}
+.plain{margin:0;padding-left:18px;display:grid;gap:6px}
+.tbl{border-collapse:collapse;width:100%;font-size:.9rem}
+.tbl th,.tbl td{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.tbl th{color:var(--muted);font-weight:500}
+.news{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center}
+.news-art{border-radius:6px;overflow:hidden;aspect-ratio:4/3;min-width:0}
+.news-art svg{display:block;width:100%;height:100%}
+.news h3{font-size:1.5rem}
+.news .meta{color:var(--muted);font-size:.88rem;margin-top:8px}
+.article{display:block;max-width:720px;padding:28px}
+.article h2{font-size:1.7rem;margin:12px 0 8px}
+.article h3{font-size:1.15rem;margin:22px 0 6px}
+.article p{max-width:62ch}
+.article .note{margin-top:22px}
+@media (max-width:900px){.dwg-info,.news{grid-template-columns:1fr}.drawings{grid-template-columns:1fr}}
+
 /* overlays */
 .ov{position:fixed;inset:0;background:rgba(15,12,9,.55);z-index:40;display:grid;place-items:center;padding:16px}
 .sheet{background:var(--paper);color:var(--walnut);border-radius:8px;max-width:880px;width:100%;max-height:calc(100% - 16px);overflow:auto;display:grid;grid-template-columns:1.1fr 1fr}
@@ -149,7 +177,9 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
     <a class="brand" href="#top">Mộc<span> Nhà</span></a>
     <nav class="nav" aria-label="Chính">
       <a href="#san-pham">Sản phẩm</a>
-      <a href="#du-an">Dự án thi công</a>
+      <a href="#cong-trinh">Công trình</a>
+      <a href="#ban-ve">Bản vẽ</a>
+      <a href="#tin-tuc">Tin tức</a>
       <a href="#quy-trinh">Quy trình</a>
       <a href="#lien-he">Liên hệ</a>
     </nav>
@@ -193,9 +223,60 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
     </div>
   </section>
 
+  <section class="wrap sec" id="cong-trinh">
+    <div class="sec-head">
+      <h2>Công trình đang thi công</h2>
+      <p>Nội thất gỗ cho một căn nhà phố tại TP.HCM, ảnh chụp tại công trình ngày 2 đến 4 tháng 11 năm 2026. Bấm vào ảnh để xem lớn.</p>
+    </div>
+    <div class="gal" id="gal"></div>
+  </section>
+
+  <section class="wrap sec" id="ban-ve">
+    <div class="sec-head">
+      <h2>Từ bản vẽ đến sản phẩm</h2>
+      <p>Mỗi món nội thất có bản vẽ triển khai riêng trước khi vào xưởng. Hồ sơ của nhà mẫu 3 phòng ngủ gồm 72 bản vẽ.</p>
+    </div>
+    <div class="drawings">
+      <figure class="dwg wide"><img src="assets/ban-ve/phoi-canh-bep.jpg" alt="Phối cảnh bếp với tủ dưới veneer óc chó, tủ trên trắng, mặt đá Nero" loading="lazy"><figcaption>Phối cảnh bếp: tủ dưới veneer óc chó, tủ trên trắng, mặt đá đen vân trắng</figcaption></figure>
+      <figure class="dwg"><img src="assets/ban-ve/phoi-canh-master.jpg" alt="Phối cảnh phòng ngủ master" loading="lazy"><figcaption>Phòng ngủ master: đầu giường, tủ áo cánh kính</figcaption></figure>
+      <figure class="dwg"><img src="assets/ban-ve/phoi-canh-phong-khach.jpg" alt="Phối cảnh vách tivi phòng khách" loading="lazy"><figcaption>Phòng khách: vách tivi ốp lam gỗ và đá</figcaption></figure>
+      <figure class="dwg"><img src="assets/ban-ve/phoi-canh-tong-the.jpg" alt="Phối cảnh tổng thể mặt bằng nội thất" loading="lazy"><figcaption>Phối cảnh tổng thể mặt bằng</figcaption></figure>
+      <figure class="dwg"><img src="assets/ban-ve/bang-mau-vat-lieu.jpg" alt="Bảng mẫu vật liệu hoàn thiện" loading="lazy"><figcaption>Bảng mẫu vật liệu hoàn thiện</figcaption></figure>
+    </div>
+    <div class="dwg-info">
+      <div>
+        <h3>Hồ sơ gồm</h3>
+        <ul class="plain">
+          <li>4 bản vẽ bìa và danh mục</li>
+          <li>9 bản phối cảnh và bảng vật liệu</li>
+          <li>24 bản vẽ cấu kiện (mặt đứng, mặt cắt, mặt bằng, 3D)</li>
+          <li>35 bản vẽ chi tiết tấm và cạnh dán chỉ để cắt ván</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Vật liệu hoàn thiện</h3>
+        <div class="chips">
+          <span class="chip">Veneer óc chó sơn PU mờ</span><span class="chip">Lam sóng veneer óc chó</span><span class="chip">Melamine vân óc chó</span><span class="chip">Melamine xám nhạt</span><span class="chip">Đá Nero Marquina</span><span class="chip">Nỉ beige</span><span class="chip">Kính trà 5 mm</span><span class="chip">Nhôm sơn tĩnh điện đen</span><span class="chip">LED 3000K</span>
+        </div>
+      </div>
+      <div style="min-width:0">
+        <h3>Cấu kiện tiêu biểu</h3>
+        <div style="overflow-x:auto"><table class="tbl">
+          <tr><th>Mã</th><th>Tên</th><th>Kích thước (mm)</th></tr>
+          <tr><td>TB01</td><td>Tủ dưới chậu rửa</td><td>900 x 580 x 810</td></tr>
+          <tr><td>TT04</td><td>Tủ trên hút mùi</td><td>800 x 350 x 400</td></tr>
+          <tr><td>KT01</td><td>Kệ tivi treo</td><td>2400 x 400 x 350</td></tr>
+          <tr><td>BF01</td><td>Kệ tủ buffet phòng ăn</td><td>1800 x 450 x 850</td></tr>
+          <tr><td>TA01</td><td>Tủ áo master cánh veneer</td><td>1200 x 600 x 2100</td></tr>
+          <tr><td>VO01</td><td>Vách ốp tivi lam sóng óc chó và đá</td><td>3600 x 18 x 2400</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
   <section class="wrap sec" id="du-an">
     <div class="sec-head">
-      <h2>Công trình PKK Group đã thi công</h2>
+      <h2>Năng lực nền móng của PKK Group</h2>
       <p>Phần nền móng cho nhà cao tầng và nhà máy, làm cho các tổng thầu như Coteccons và Victorycons. Cùng đội ngũ này đảm nhận thi công, lắp đặt cho công trình của bạn.</p>
     </div>
     <div class="spread">
@@ -218,6 +299,26 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
       <li><h3>Lắp đặt</h3><p>Đội thi công lắp tại công trình, vệ sinh sau khi xong.</p></li>
       <li><h3>Bảo hành</h3><p>Phiếu bảo hành 24 tháng, có hotline xử lý lỗi.</p></li>
     </ol>
+  </section>
+
+  <section class="wrap sec" id="tin-tuc">
+    <div class="sec-head">
+      <h2>Tin tức</h2>
+      <p>Kiến thức chọn vật liệu và dùng đồ gỗ bền hơn.</p>
+    </div>
+    <article class="news">
+      <div class="news-art" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="var(--panel)"/>
+          <circle cx="200" cy="150" r="110" fill="#5A3A28"/><circle cx="200" cy="150" r="88" fill="#7A5236"/><circle cx="200" cy="150" r="66" fill="#8B6B4A"/><circle cx="200" cy="150" r="44" fill="#A07C55"/><circle cx="200" cy="150" r="22" fill="#B58B5A"/><circle cx="200" cy="150" r="5" fill="#3B281E"/>
+          <path d="M200 150L300 90" stroke="#3B281E" stroke-width="2" opacity=".5"/></svg>
+      </div>
+      <div>
+        <h3>Chọn gỗ cho nội thất: 6 điều cần biết trước khi đặt hàng</h3>
+        <p class="meta">Biên tập từ sách The Essential Wood Book · đọc khoảng 4 phút</p>
+        <p style="margin:12px 0 16px;color:var(--muted)">Cùng là gỗ sồi hay óc chó, nhưng tấm gỗ sấy đúng độ ẩm và cắt đúng thớ có thể bền hơn rất nhiều. Sáu điểm dưới đây giúp bạn hỏi đúng khi chọn vật liệu.</p>
+        <button class="btn" type="button" id="openNews">Đọc bài</button>
+      </div>
+    </article>
   </section>
 </main>
 
@@ -266,6 +367,35 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
     </div>
   </div>
 </div>
+<div class="ov" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Xem ảnh">
+  <figure style="margin:0;max-width:min(960px,100%);max-height:100%;display:grid;gap:10px;justify-items:center;color:#F3EEE6">
+    <img id="lbImg" alt="" style="max-width:100%;max-height:calc(100vh - 120px);object-fit:contain;border-radius:4px">
+    <figcaption id="lbCap"></figcaption>
+    <button class="x" type="button" data-close style="color:#F3EEE6;border-color:#F3EEE6">Đóng</button>
+  </figure>
+</div>
+
+<div class="ov" id="news" hidden role="dialog" aria-modal="true" aria-labelledby="nTitle">
+  <div class="sheet article">
+    <button class="x" type="button" data-close>Đóng</button>
+    <h2 id="nTitle">Chọn gỗ cho nội thất: 6 điều cần biết trước khi đặt hàng</h2>
+    <p class="meta" style="color:var(--muted);font-size:.88rem">Biên tập từ nội dung sách The Essential Wood Book (Cedar Lane Press, 2020)</p>
+    <h3>1. Gỗ cứng và gỗ mềm không nói về độ cứng</h3>
+    <p>Gỗ cứng (hardwood) là gỗ của cây lá rộng như sồi, óc chó, anh đào. Gỗ mềm (softwood) là gỗ của cây lá kim như thông. Cách gọi chỉ phân loại cây, vì có loại gỗ cứng còn nhẹ hơn một số gỗ mềm. Với nội thất, câu hỏi hữu ích hơn là gỗ chịu mài mòn và chịu va đập ra sao, và có hợp với món đồ bạn định dùng không.</p>
+    <h3>2. Độ ẩm quyết định gỗ có cong vênh hay không</h3>
+    <p>Gỗ hút và nhả ẩm theo không khí. Gỗ còn ướt khi đóng thành đồ sẽ co lại, nứt mối ghép và cong cánh tủ. Hãy hỏi xưởng gỗ được sấy đến độ ẩm bao nhiêu và có đo lại trước khi gia công không. Con số hợp lý phụ thuộc môi trường dùng, và ở TP.HCM nóng ẩm thì mức an toàn cao hơn xứ lạnh. Gỗ mới về nên để ổn định vài ngày trong xưởng trước khi cắt.</p>
+    <h3>3. Hướng thớ cho vẻ ngoài và độ ổn định</h3>
+    <p>Cách xẻ khúc gỗ cho ra hai kiểu mặt ván chính. Ván xẻ hướng tâm (quartersawn) cho vân thẳng, đều, ít cong vênh hơn nhưng giá cao hơn. Ván xẻ tiếp tuyến (plainsawn) cho vân hình núi uốn lượn, dễ bắt mắt và rẻ hơn. Mặt bàn lớn hoặc cánh tủ cao thường nên chọn ván ổn định hơn.</p>
+    <h3>4. Mỗi loài gỗ có tính cách riêng</h3>
+    <p>Óc chó có màu nâu sâu, dễ gia công, hợp bàn ăn và vách ốp. Sồi trắng chắc, chịu ẩm tốt, hợp giường và đồ ngoài trời có che. Anh đào đổi sang màu đỏ ấm theo thời gian. Thích hợp nhất là chọn loài gỗ theo vị trí đặt đồ, không chỉ theo màu.</p>
+    <h3>5. Veneer và ván công nghiệp không phải là hàng kém</h3>
+    <p>Veneer là lớp gỗ thật mỏng dán lên cốt ván. Nhờ vậy tấm lớn như cánh tủ hay vách ốp ít cong hơn gỗ nguyên khối và dùng ít gỗ quý hơn. Điều cần hỏi là cốt ván loại nào, có chống ẩm không, dán cạnh bằng gì và sơn phủ ra sao.</p>
+    <h3>6. Hỏi về nguồn gốc gỗ</h3>
+    <p>Nên chọn gỗ có giấy tờ nguồn gốc rõ ràng, ưu tiên gỗ khai thác bền vững. Đây là lợi ích lâu dài: gỗ hợp pháp thì dễ bảo hành, dễ bán lại và yên tâm khi bàn giao cho chủ đầu tư.</p>
+    <p class="note">Bài viết là bản tóm tắt tiếng Việt, diễn đạt lại theo ý chính. Các mức độ ẩm và so sánh trong bài mang tính tham khảo chung, hãy hỏi xưởng thông số cụ thể cho từng lô gỗ.</p>
+  </div>
+</div>
+
 <div class="toast" id="toast" hidden role="status"></div>
 
 <script>
@@ -283,10 +413,13 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
     {id:9,n:"Ghế ăn Cong Lưng",room:"Phòng ăn",kind:"chair",mat:"Gỗ sồi",w:"#C48A5A",wood:"#B58B5A",price:1850000,dim:"480 x 520 x 810 mm",d:"Lưng uốn cong ôm người, đệm ngồi bọc vải."},
     {id:10,n:"Tủ ly Ba Cánh",room:"Phòng ăn",kind:"cabinet",mat:"Gỗ sồi",w:"#C48A5A",wood:"#8B6B4A",price:11200000,dim:"1500 x 420 x 850 mm",d:"Ba cánh có kính mờ, đèn LED trong tủ."},
     {id:11,n:"Bàn làm việc Hộc Kéo",room:"Văn phòng",kind:"desk",mat:"MFC",w:"#7D8A8F",wood:"#7C6A58",price:4600000,dim:"1400 x 700 x 750 mm",d:"Hộc kéo khóa, lỗ luồn dây, MFC phủ melamine."},
-    {id:12,n:"Kệ sách Khung Sắt",room:"Văn phòng",kind:"shelf",mat:"Kim loại",w:"#7D8A8F",wood:"#2E2A25",price:3700000,dim:"900 x 320 x 1800 mm",d:"Bốn tầng, tầng gỗ dày 25 mm, khung thép hàn."}
+    {id:12,n:"Kệ sách Khung Sắt",room:"Văn phòng",kind:"shelf",mat:"Kim loại",w:"#7D8A8F",wood:"#2E2A25",price:3700000,dim:"900 x 320 x 1800 mm",d:"Bốn tầng, tầng gỗ dày 25 mm, khung thép hàn."},
+    {id:13,n:"Tủ buffet Anh Đào Cổ Điển",room:"Phòng ăn",kind:"cabinet",mat:"Gỗ anh đào",w:"#C9B27C",wood:"#A86A3C",price:24500000,dim:"1640 x 495 mm, cao theo thiết kế",d:"Thùng ván ép, ngăn kéo mộng đuôi én, cánh có khung và kính để trưng bày chén bát.",src:"Ý tưởng từ Wood Magazine số 296 (7/2024)"},
+    {id:14,n:"Ghế thư giãn Ngoài Trời",room:"Sân vườn",kind:"chair",mat:"Gỗ tếch",w:"#C48A5A",wood:"#8B6B4A",price:6900000,dim:"Dài khoảng 1100 mm, lưng ngả",d:"Dáng ngả thấp, tay ghế rộng để đặt ly, khung gỗ ngoài trời phủ dầu bảo vệ.",src:"Ý tưởng từ Wood Magazine số 301 (3/2025)"},
+    {id:15,n:"Tủ đồ nghề Ba Tầng",room:"Xưởng",kind:"cabinet",mat:"Gỗ anh đào",w:"#C9B27C",wood:"#B0713F",price:14800000,dim:"Đứng sàn, ba tầng ngăn kéo",d:"Ba khối ngăn kéo xếp chồng, nhìn như đồ nội thất, dùng để cất dụng cụ hoặc đồ thủ công.",src:"Ý tưởng từ Wood Magazine số 301 (3/2025)"}
   ];
-  var rooms=["Tất cả","Phòng khách","Phòng ngủ","Phòng ăn","Văn phòng"];
-  var mats=["Gỗ sồi","Gỗ óc chó","Vải bố","MFC","Đá","Kim loại"];
+  var rooms=["Tất cả","Phòng khách","Phòng ngủ","Phòng ăn","Văn phòng","Sân vườn","Xưởng"];
+  var mats=["Gỗ sồi","Gỗ óc chó","Gỗ anh đào","Gỗ tếch","Vải bố","MFC","Đá","Kim loại"];
   var state={room:"Tất cả",mat:null,sort:"def"};
   var list=[];
   try{var s=localStorage.getItem("mocnha-list");if(s)list=JSON.parse(s).filter(function(i){return P.some(function(p){return p.id===i})})}catch(e){}
@@ -375,12 +508,22 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
     else if(t.dataset.add)toggle(+t.dataset.add);
     else if(t.dataset.rm)toggle(+t.dataset.rm);
     else if(t.dataset.open)openDetail(+t.dataset.open);
-    else if(t.hasAttribute("data-close")){$("detail").hidden=true;$("drawer").hidden=true}
+    else if(t.dataset.photo)openPhoto(+t.dataset.photo);
+    else if(t.hasAttribute("data-close"))closeAll();
   });
+  function closeAll(){["detail","drawer","news","lightbox"].forEach(function(id){$(id).hidden=true})}
+  var shots=[
+    ["tc-01","Giường hộc kéo, đầu giường ốp gỗ"],["tc-02","Tủ bếp và kệ trang trí sơn xám"],["tc-03","Tủ khung mở kèm bàn trang điểm treo"],
+    ["tc-04","Tủ quần áo cánh cao"],["tc-05","Đầu giường bọc nệm xám"],["tc-06","Bàn làm việc treo cạnh tủ cao"],
+    ["tc-07","Tủ âm dưới cầu thang"],["tc-08","Cầu thang kính và tủ liền khối"],["tc-09","Vách lam gỗ phòng khách"],["tc-10","Lam gỗ cao thông tầng"]
+  ];
+  $("gal").innerHTML=shots.map(function(s,i){return '<button type="button" data-photo="'+i+'" aria-label="Xem ảnh: '+s[1]+'"><img src="assets/du-an/'+s[0]+'.jpg" alt="'+s[1]+'" loading="lazy"></button>'}).join("");
+  function openPhoto(i){$("lbImg").src="assets/du-an/"+shots[i][0]+".jpg";$("lbImg").alt=shots[i][1];$("lbCap").textContent=shots[i][1];$("lightbox").hidden=false}
+  $("openNews").addEventListener("click",function(){$("news").hidden=false});
   $("sort").addEventListener("change",function(e){state.sort=e.target.value;renderGrid()});
   $("openList").addEventListener("click",function(){$("drawer").hidden=false});
-  ["detail","drawer"].forEach(function(id){$(id).addEventListener("click",function(e){if(e.target===$(id))$(id).hidden=true})});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"){$("detail").hidden=true;$("drawer").hidden=true}});
+  ["detail","drawer","news","lightbox"].forEach(function(id){$(id).addEventListener("click",function(e){if(e.target===$(id))$(id).hidden=true})});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll()});
   $("clearList").addEventListener("click",function(){list=[];save();renderList();renderGrid()});
   $("copyMsg").addEventListener("click",function(){
     var m=$("msg");if(!m.value){toast("Danh sách đang trống");return}
@@ -391,7 +534,7 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
   function openDetail(id){
     var p=P.filter(function(x){return x.id===id})[0];cur=p;
     $("dPic").innerHTML=art(p);$("dTitle").textContent=p.n;$("dPrice").textContent=vnd(p.price);$("dDesc").textContent=p.d;
-    $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>24 tháng</dd>';
+    $("dSpec").innerHTML='<dt>Kích thước</dt><dd>'+p.dim+'</dd><dt>Vật liệu</dt><dd>'+p.mat+'</dd><dt>Phòng</dt><dd>'+p.room+'</dd><dt>Bảo hành</dt><dd>24 tháng</dd>'+(p.src?'<dt>Nguồn ý tưởng</dt><dd>'+p.src+'</dd>':'');
     $("dAdd").textContent=list.indexOf(id)>-1?"Bỏ khỏi danh sách tư vấn":"Thêm vào danh sách tư vấn";
     $("detail").hidden=false;
   }
