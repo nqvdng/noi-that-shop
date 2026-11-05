@@ -6,7 +6,9 @@ Website bán nội thất kết hợp thi công hoàn thiện. Trang tĩnh, khô
 
 | Đường dẫn | Nội dung |
 |---|---|
-| `index.html` | Toàn bộ trang (giao diện, dữ liệu sản phẩm, mã xử lý) |
+| `index.html` | Trang chủ: sản phẩm, công trình, bản vẽ, tin tức, liên hệ |
+| `vat-lieu.html` | Trang Vật liệu và phụ kiện: gỗ thịt, gỗ nhân tạo, tấm phủ, da và vải bọc, đá, kính, kim loại, phụ kiện; chọn mẫu để gửi đặt mẫu |
+| `styles.css` | Giao diện dùng chung cho các trang |
 | `assets/du-an/` | Ảnh công trình đang thi công (đã cắt bỏ dòng địa chỉ và giờ chụp) |
 | `assets/ban-ve/` | Ảnh phối cảnh và bảng vật liệu lấy từ bộ shop drawing |
 | `favicon.svg`, `404.html`, `robots.txt` | Biểu tượng, trang lỗi, cấu hình công cụ tìm kiếm |
@@ -28,6 +30,7 @@ Lưu ý: trang đăng bằng Pages là công khai dù repo ở chế độ riên
 ## Sửa nội dung thường gặp
 
 - **Sản phẩm, giá, kích thước:** mảng `P` trong phần `<script>` của `index.html`.
+- **Vật liệu và phụ kiện:** mảng `M` (từng vật liệu) và `G` (các nhóm) trong `vat-lieu.html`.
 - **Ảnh công trình:** thay ảnh trong `assets/du-an/` và danh sách `shots` trong `<script>`.
 - **Thông tin liên hệ:** khối `#lien-he` trong `index.html`.
 - **Bài tin tức:** khối `#news` trong `index.html`.

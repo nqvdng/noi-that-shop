@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vật liệu và phụ kiện | Mộc Nhà Nội Thất</title>
+<meta name="description" content="Cẩm nang vật liệu nội thất: gỗ thịt, gỗ nhân tạo, tấm phủ, da và vải bọc, đá, kính, kim loại và phụ kiện. Chọn mẫu để nhận mẫu thật trước khi chốt.">
+<meta name="theme-color" content="#1F7A43">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+.vl-hero{padding-block:clamp(28px,5vw,56px) 8px}
+.vl-hero h1{font-size:clamp(2rem,4.6vw,3.5rem);max-width:20ch}
+.vl-hero p{margin-top:16px;max-width:60ch;color:var(--muted);font-size:1.05rem}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-block:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 58px);background:var(--paper);z-index:5;border-bottom:1px solid var(--line)}
+.bar .chips{flex:1;min-width:0}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;padding-block:26px}
+.mcard{display:flex;flex-direction:column;gap:10px;min-width:0;border-top:1px solid var(--line);padding-top:12px}
+.sw{height:84px;border-radius:4px;border:1px solid var(--line)}
+.mcard h3{font-size:1.1rem;font-family:var(--font-body);font-weight:600;letter-spacing:0}
+.mcard p{color:var(--muted);font-size:.93rem}
+.mcard dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:.88rem}
+.mcard dt{color:var(--muted)}
+.mcard dd{margin:0}
+.mcard .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:6px}
+.lvl{letter-spacing:1px;color:var(--brass);font-weight:600}
+.lvl i{font-style:normal;opacity:.28}
+.gtitle{padding-top:26px;font-size:1.5rem}
+.gdesc{color:var(--muted);max-width:62ch;margin-top:6px}
+.cmp{overflow-x:auto;margin-block:20px 12px}
+.cmp table{border-collapse:collapse;min-width:640px;width:100%;font-size:.92rem}
+.cmp th,.cmp td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp th{font-weight:600}
+.cmp thead th{border-bottom:2px solid var(--walnut)}
+.cmp tbody th{color:var(--muted);font-weight:500;white-space:nowrap}
+.sampbar{position:fixed;left:0;right:0;bottom:0;background:var(--walnut);color:var(--paper);z-index:15;padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sampbar .btn{border-color:var(--paper);color:var(--paper)}
+.sampbar .btn:hover{background:var(--paper);color:var(--walnut)}
+.pad-b{height:84px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Mộc<span> Nhà</span></a>
+    <nav class="nav" aria-label="Chính">
+      <a href="index.html#san-pham">Sản phẩm</a>
+      <a href="index.html#cong-trinh">Công trình</a>
+      <a href="index.html#ban-ve">Bản vẽ</a>
+      <a href="vat-lieu.html" aria-current="page" style="border-color:var(--brass)">Vật liệu và phụ kiện</a>
+      <a href="index.html#tin-tuc">Tin tức</a>
+      <a href="index.html#lien-he">Liên hệ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap vl-hero">
+    <h1>Vật liệu và phụ kiện</h1>
+    <p>Cùng một món nội thất, chọn vật liệu khác nhau sẽ cho độ bền, cảm giác và giá khác nhau. Trang này gom các lựa chọn thường dùng: gỗ thịt, gỗ nhân tạo, tấm phủ bề mặt, da và vải bọc, đá, kính, kim loại và phụ kiện. Chọn món bạn quan tâm để nhận mẫu thật trước khi chốt.</p>
+  </section>
+
+  <div class="wrap bar" role="toolbar" aria-label="Lọc theo nhóm">
+    <div class="chips" id="gchips"></div>
+  </div>
+
+  <div class="wrap" id="catalog"></div>
+
+  <section class="wrap" style="padding-block:20px 8px" id="so-sanh">
+    <h2 class="gtitle" style="padding-top:8px">So sánh nhanh các tấm phủ bề mặt</h2>
+    <p class="gdesc">Đánh giá mang tính tương đối, thay đổi theo hãng và theo loại cốt ván bên dưới. Hãy xem mẫu thật trước khi chọn.</p>
+    <div class="cmp"><table>
+      <thead><tr><th></th><th>Melamine</th><th>Laminate (HPL)</th><th>Veneer</th><th>Acrylic</th><th>Sơn PU</th></tr></thead>
+      <tbody>
+        <tr><th>Vẻ ngoài</th><td>Màu trơn, vân gỗ in</td><td>Màu và vân rất đa dạng</td><td>Vân gỗ thật</td><td>Bóng gương</td><td>Màu tự chọn, mờ hoặc bóng</td></tr>
+        <tr><th>Chịu xước</th><td>Khá</td><td>Tốt</td><td>Trung bình, cần lớp sơn bảo vệ</td><td>Trung bình</td><td>Trung bình</td></tr>
+        <tr><th>Chịu nhiệt</th><td>Trung bình</td><td>Tốt</td><td>Trung bình</td><td>Kém</td><td>Trung bình</td></tr>
+        <tr><th>Dùng cho</th><td>Thùng tủ, kệ</td><td>Mặt bàn, mặt tủ bếp</td><td>Cánh tủ, vách ốp</td><td>Cánh tủ bếp, tủ áo</td><td>Cánh tủ, tủ trang trí</td></tr>
+        <tr><th>Mức giá</th><td><span class="lvl">₫<i>₫₫₫</i></span></td><td><span class="lvl">₫₫<i>₫₫</i></span></td><td><span class="lvl">₫₫₫<i>₫</i></span></td><td><span class="lvl">₫₫₫<i>₫</i></span></td><td><span class="lvl">₫₫₫<i>₫</i></span></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="wrap" style="padding-block:8px 40px">
+    <h2 class="gtitle" style="padding-top:8px">Ba câu hỏi khi chọn vật liệu</h2>
+    <ul class="plain" style="max-width:62ch;margin-top:12px">
+      <li>Món đồ đặt ở đâu? Bếp, phòng tắm và ngoài trời cần vật liệu chịu ẩm.</li>
+      <li>Ai dùng và dùng thế nào? Nhà có trẻ nhỏ hoặc thú cưng nên ưu tiên bề mặt chịu xước, dễ lau.</li>
+      <li>Ngân sách dồn vào đâu? Có thể dùng vật liệu quý ở nơi nhìn thấy (cánh, mặt) và vật liệu tiết kiệm ở nơi khuất (thùng, hậu).</li>
+    </ul>
+  </section>
+  <div class="pad-b"></div>
+</main>
+
+<div class="sampbar" id="sampbar">
+  <span id="sampTxt">Chưa chọn mẫu nào</span>
+  <button class="btn" type="button" id="openSamp">Xem danh sách mẫu</button>
+</div>
+
+<div class="ov drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="lTitle">
+  <div class="sheet">
+    <button class="x" type="button" data-close style="float:right">Đóng</button>
+    <h2 id="lTitle" style="font-size:1.4rem">Danh sách mẫu cần nhận</h2>
+    <ul id="listItems"></ul>
+    <label for="addr" style="display:block;margin:12px 0 6px;font-size:.9rem;color:var(--muted)">Tên, số điện thoại và địa chỉ nhận mẫu</label>
+    <input id="addr" type="text" autocomplete="off" style="width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--walnut)">
+    <label for="msg" style="display:block;margin:12px 0 6px;font-size:.9rem;color:var(--muted)">Nội dung để gửi qua Zalo hoặc email</label>
+    <textarea id="msg" readonly></textarea>
+    <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+      <button class="btn solid" type="button" id="copyMsg">Sao chép nội dung</button>
+      <a class="btn" href="https://zalo.me/84905006046" target="_blank" rel="noopener">Mở Zalo</a>
+      <button class="btn" type="button" id="clearList">Xóa danh sách</button>
+    </div>
+    <p style="margin-top:12px;color:var(--muted);font-size:.85rem">Sao chép nội dung rồi dán vào Zalo hoặc email gửi cho đội tư vấn. Trang này chưa tự gửi thông tin.</p>
+  </div>
+</div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<footer class="wrap" style="padding-bottom:96px">Thông tin vật liệu mang tính tham khảo chung, mức giá chỉ là so sánh tương đối (₫ thấp đến ₫₫₫₫ cao). Màu minh họa trên màn hình không thay cho mẫu thật.</footer>
+
+<script>
+(function(){
+  var G=[
+    {id:"go",n:"Gỗ thịt",d:"Gỗ nguyên khối, vân thật, có thể chà nhám và sơn lại nhiều lần."},
+    {id:"nt",n:"Gỗ nhân tạo (cốt ván)",d:"Phần lõi để dán tấm phủ hoặc sơn. Quyết định độ phẳng, độ chịu ẩm và giữ vít."},
+    {id:"tp",n:"Tấm phủ bề mặt",d:"Lớp ngoài cùng quyết định vẻ ngoài, độ chịu xước và dễ lau chùi."},
+    {id:"dv",n:"Da, vải bọc và ruột đệm",d:"Dùng cho sofa, đầu giường, ghế ăn. Chọn theo cách dùng và cách vệ sinh."},
+    {id:"dk",n:"Đá, kính, kim loại",d:"Mặt bàn, mặt bếp, khung cánh kính, chân bàn và tay nắm."},
+    {id:"pk",n:"Phụ kiện",d:"Bộ phận nhỏ nhưng quyết định cảm giác dùng hằng ngày: đóng mở êm, kéo trơn, gọn gàng."}
+  ];
+  var M=[
+    {g:"go",n:"Gỗ sồi",c:"#C9A66B",d:"Vân rõ, màu vàng nhạt, chắc và chịu ẩm tốt.",use:"Bàn ăn, giường, tủ",up:"Bền, vân đẹp, dễ nhuộm màu",dn:"Giá cao, nặng",p:3},
+    {g:"go",n:"Gỗ óc chó",c:"#5A3A28",d:"Màu nâu sâu, vân mềm, dễ gia công.",use:"Bàn, vách ốp, tay vịn",up:"Màu sang, dễ gia công",dn:"Giá cao, màu đậm",p:4},
+    {g:"go",n:"Gỗ tần bì",c:"#D8C193",d:"Vân thẳng, màu sáng, gần giống sồi.",use:"Ghế, tủ, giường",up:"Dai, chịu va đập tốt",dn:"Cần sơn phủ cẩn thận để vân đều",p:3},
+    {g:"go",n:"Gỗ tếch",c:"#A9784A",d:"Có dầu tự nhiên, chịu nắng mưa tốt.",use:"Sân vườn, ban công, sàn gỗ",up:"Chịu thời tiết tốt",dn:"Giá cao, màu đổi theo thời gian",p:4},
+    {g:"go",n:"Gỗ cao su",c:"#E2C99B",d:"Gỗ sáng, thường dùng dạng ghép thanh.",use:"Giường, kệ, đồ trẻ em",up:"Giá dễ chịu, ghép thanh ổn định",dn:"Cần xử lý mối mọt, kém chịu ẩm hơn sồi",p:2},
+    {g:"go",n:"Gỗ thông",c:"#E6CC95",d:"Gỗ mềm, vân vàng, có mắt gỗ.",use:"Kệ, đồ trang trí",up:"Nhẹ, giá thấp",dn:"Dễ trầy xước",p:1},
+
+    {g:"nt",n:"MDF",c:"#C8B08A",d:"Ván sợi mật độ trung bình, mặt phẳng mịn.",use:"Cánh tủ sơn, vách phay CNC",up:"Phẳng, dễ sơn, dễ phay",dn:"Sợ nước nếu không chống ẩm",p:2},
+    {g:"nt",n:"MDF lõi xanh chống ẩm",c:"#8FB08A",d:"Cùng cấu tạo với MDF, thêm phụ gia chống ẩm.",use:"Tủ bếp, phòng tắm, tủ lavabo",up:"Chịu ẩm tốt hơn MDF thường",dn:"Đắt hơn, vẫn không ngâm nước",p:2},
+    {g:"nt",n:"HDF",c:"#B99B6F",d:"Ván sợi mật độ cao, cứng và đặc hơn MDF.",use:"Sàn, cánh tủ, tấm phay chi tiết",up:"Cứng, chắc",dn:"Nặng, giá cao hơn MDF",p:3},
+    {g:"nt",n:"MFC (ván dăm phủ melamine)",c:"#C4B8A3",d:"Ván dăm đã phủ sẵn melamine, nhiều màu vân.",use:"Thùng tủ, kệ, bàn làm việc",up:"Giá tốt, nhiều màu",dn:"Giữ vít kém hơn ván khác, cạnh cần dán chỉ",p:1},
+    {g:"nt",n:"Plywood (ván ép)",c:"#D2B586",d:"Nhiều lớp gỗ mỏng dán chéo thớ.",use:"Thùng tủ cao cấp, ghế, vách",up:"Chắc, nhẹ, giữ vít tốt",dn:"Lộ lớp ở cạnh, cần dán chỉ hoặc ốp",p:3},
+
+    {g:"tp",n:"Melamine",c:"#8B6B4A",d:"Giấy tẩm nhựa melamine ép nhiệt lên cốt ván.",use:"Thùng tủ, kệ, bàn làm việc",up:"Nhiều màu vân, giá thấp",dn:"Chịu nhiệt và va đập kém hơn laminate",p:1},
+    {g:"tp",n:"Laminate (HPL)",c:"#6E5B48",d:"Nhiều lớp giấy tẩm nhựa ép áp suất cao, dày khoảng 0,6 đến 1 mm, dán lên cốt ván.",use:"Mặt bàn, mặt tủ bếp, cánh tủ",up:"Chịu mài mòn, chịu nhiệt, dễ lau",dn:"Giá cao hơn melamine, cần dán đúng kỹ thuật",p:2},
+    {g:"tp",n:"Veneer",c:"#6A4430",d:"Lát gỗ thật rất mỏng dán lên cốt ván, thường sơn PU phủ ngoài.",use:"Cánh tủ, vách ốp, tủ áo",up:"Vân gỗ thật, có thể sơn mờ",dn:"Dễ trầy hơn, giá cao",p:3},
+    {g:"tp",n:"Acrylic",c:"#E8E8E4",d:"Tấm nhựa phủ bóng gương hoặc mờ trên cốt MDF.",use:"Cánh tủ bếp, tủ áo",up:"Bóng sâu, màu đậm",dn:"Dễ có vết xước nhỏ, kém chịu nhiệt",p:3},
+    {g:"tp",n:"Sơn PU",c:"#D9D6CC",d:"Lớp sơn polyurethane phủ trên MDF, chọn màu tùy ý.",use:"Cánh tủ, tủ trang trí",up:"Bề mặt liền, màu tự chọn",dn:"Thi công lâu, cần xưởng sơn tốt",p:3},
+
+    {g:"dv",n:"Da PU (da nhân tạo)",c:"#3E3A38",d:"Lớp polyurethane phủ lên nền vải, mềm, nhiều màu.",use:"Sofa, ghế ăn, đầu giường",up:"Giá tốt, dễ lau, đồng màu",dn:"Lớp phủ có thể bong sau nhiều năm",p:2},
+    {g:"dv",n:"Simili PVC",c:"#5A4A3E",d:"Da nhân tạo nền nhựa PVC, cứng hơn PU.",use:"Ghế quán, ghế văn phòng",up:"Rẻ, chống nước",dn:"Cứng, kém thoáng",p:1},
+    {g:"dv",n:"Da microfiber",c:"#4A3F38",d:"Nền sợi siêu nhỏ phủ PU, tay mềm gần giống da thật.",use:"Sofa, ghế, đầu giường",up:"Bền hơn PU thường",dn:"Giá cao hơn",p:3},
+    {g:"dv",n:"Da thật (da bò)",c:"#7B4B2E",d:"Da tự nhiên, lên màu đẹp theo thời gian.",use:"Sofa, ghế thư giãn",up:"Bền, thoáng, sang",dn:"Giá cao, cần bảo dưỡng",p:4},
+    {g:"dv",n:"Vải bố, vải lanh",c:"#BBB29C",d:"Sợi tự nhiên hoặc pha, tay vải thô, màu nhã.",use:"Sofa, rèm, vỏ gối",up:"Thoáng, nhẹ",dn:"Dễ nhăn, bám bụi",p:1},
+    {g:"dv",n:"Vải nhung",c:"#4D5E57",d:"Bề mặt có lông ngắn, mềm và sâu màu.",use:"Ghế, sofa, đầu giường",up:"Mềm, sang",dn:"Dễ bám bụi và lông thú cưng",p:2},
+    {g:"dv",n:"Vải bouclé",c:"#E4DDCF",d:"Sợi xoắn tạo kết cấu như vòng nhỏ.",use:"Ghế bành, đầu giường",up:"Kết cấu đẹp, ấm",dn:"Dễ xù sợi nếu bị móc",p:3},
+    {g:"dv",n:"Vải chống thấm, chống bẩn",c:"#8E9AA0",d:"Vải được xử lý để nước và vết bẩn dễ lau.",use:"Sofa nhà có trẻ nhỏ, thú cưng",up:"Dễ vệ sinh",dn:"Tay vải hơi cứng, giá cao hơn",p:3},
+    {g:"dv",n:"Nỉ bọc đầu giường",c:"#D3C3A5",d:"Nỉ hoặc vải bouclé bọc mút mỏng, màu be.",use:"Đầu giường, vách trang trí",up:"Mềm, hơi tiêu âm",dn:"Giữ bụi, cần hút bụi định kỳ",p:2},
+    {g:"dv",n:"Mút D40, D50",c:"#F0E3A5",d:"Mút xốp polyurethane, số càng lớn mật độ càng cao.",use:"Ruột sofa, nệm ghế, đầu giường",up:"Đàn hồi tốt, giá hợp lý",dn:"Mật độ thấp thì lún sớm",p:2},
+    {g:"dv",n:"Cao su non (latex)",c:"#F2EBD8",d:"Ruột đệm có độ đàn hồi cao, thoáng khí.",use:"Nệm, gối, đệm ghế cao cấp",up:"Êm, bền",dn:"Nặng, giá cao",p:4},
+
+    {g:"dk",n:"Đá nung kết (sintered stone)",c:"#1E1E1F",d:"Đá nhân tạo nung ở nhiệt độ cao, như màu nền đen vân trắng kiểu Nero Marquina.",use:"Mặt bếp, mặt đảo, ốp vách",up:"Chịu nhiệt, chống xước, ít thấm",dn:"Giòn ở cạnh, cần thợ cắt chuyên",p:4},
+    {g:"dk",n:"Đá thạch anh nhân tạo (quartz)",c:"#DCDCD6",d:"Hạt thạch anh trộn nhựa, màu đều.",use:"Mặt bếp, lavabo",up:"Đều màu, ít thấm",dn:"Chịu nhiệt kém hơn đá nung kết",p:3},
+    {g:"dk",n:"Đá tự nhiên (granite, marble)",c:"#B8B2A8",d:"Mỗi tấm có vân riêng.",use:"Mặt bàn, bậc cầu thang, ốp",up:"Vân độc nhất",dn:"Marble dễ thấm và ố, granite nặng",p:4},
+    {g:"dk",n:"Kính cường lực",c:"#5C4033",d:"Kính tôi nhiệt, dày thường từ 5 đến 10 mm, có thể trong hoặc màu trà.",use:"Cánh tủ, tay vịn, vách",up:"Chịu lực, an toàn khi vỡ",dn:"Không cắt lại sau khi tôi",p:2},
+    {g:"dk",n:"Gương tráng bạc",c:"#D5DCE0",d:"Gương dày khoảng 5 mm, có thể dán lên cánh tủ.",use:"Tủ áo, phòng tắm",up:"Mở rộng không gian",dn:"Cần dán cạnh chống ẩm",p:2},
+    {g:"dk",n:"Nhôm định hình sơn tĩnh điện",c:"#222222",d:"Khung nhôm sơn đen mờ hoặc màu khác.",use:"Khung cánh kính, tay nắm, máng đèn",up:"Nhẹ, không gỉ",dn:"Trầy sơn lộ màu nhôm",p:2},
+    {g:"dk",n:"Inox",c:"#C9CDD0",d:"Thép không gỉ, bề mặt xước hoặc bóng.",use:"Chân bàn, tay nắm, thanh trang trí",up:"Không gỉ trong nhà, dễ vệ sinh",dn:"Loại bóng dễ in vân tay",p:3},
+    {g:"dk",n:"Thép sơn tĩnh điện",c:"#3A3F42",d:"Thép hộp, thép tấm sơn phủ.",use:"Chân bàn ghế, kệ sắt",up:"Chắc, giá tốt",dn:"Trầy sơn có thể gỉ",p:1},
+
+    {g:"pk",n:"Bản lề giảm chấn",c:"#CFCFCB",d:"Cánh tủ tự đóng êm, không đập.",use:"Mọi cánh tủ bản lề",up:"Êm, bền hơn bản lề thường",dn:"Chọn đúng kiểu phủ cánh khi đặt",p:0},
+    {g:"pk",n:"Ray ngăn kéo giảm chấn",c:"#CFCFCB",d:"Ray bi âm kéo trơn, loại kéo hết ngăn cho tầm với trọn ngăn.",use:"Ngăn kéo bếp, tủ áo, bàn làm việc",up:"Kéo êm, chịu tải tốt",dn:"Cần chọn đúng chiều dài và tải trọng",p:0},
+    {g:"pk",n:"Tay nắm",c:"#2A2A2A",d:"Thanh dài, nhôm đen mờ, âm cạnh hoặc tay nắm tròn.",use:"Cánh tủ, ngăn kéo",up:"Quyết định nét thẩm mỹ của cả tủ",dn:"Loại thanh dài cần canh đều khoảng cách",p:0},
+    {g:"pk",n:"Mở bật (push to open)",c:"#CFCFCB",d:"Chạm nhẹ để cánh mở, không cần tay nắm.",use:"Tủ trên, tủ áo tối giản",up:"Mặt cánh phẳng liền",dn:"Cánh nặng hoặc lệch khó mở",p:0},
+    {g:"pk",n:"Ray lùa và cánh lùa",c:"#BDBDB8",d:"Cánh trượt trên ray, tiết kiệm không gian mở cánh.",use:"Tủ áo, vách ngăn",up:"Không tốn diện tích mở cánh",dn:"Chỉ mở được một nửa tủ một lúc",p:0},
+    {g:"pk",n:"Chân tủ điều chỉnh",c:"#9A9A95",d:"Chân nhựa hoặc nhôm có thể chỉnh cao thấp.",use:"Tủ bếp, tủ dưới",up:"Cân bằng khi sàn lệch",dn:"Cần che chân bằng len chân tủ",p:0},
+    {g:"pk",n:"Đèn LED thanh nhôm",c:"#FFD99B",d:"Dây LED trong máng nhôm, ánh sáng 3000K ấm, có thể gắn cảm biến.",use:"Dưới tủ trên, trong tủ áo, vách",up:"Tăng chiều sâu, dễ thấy đồ",dn:"Cần chừa đường dây điện từ đầu",p:0},
+    {g:"pk",n:"Nẹp và chỉ dán cạnh",c:"#B99B6F",d:"Chỉ PVC hoặc ABS dán che cạnh ván, đồng màu với bề mặt.",use:"Mọi cạnh ván phủ",up:"Chống ẩm và sứt cạnh",dn:"Dán kém sẽ bong sau một thời gian",p:0},
+    {g:"pk",n:"Rổ kéo bếp, hộp gia vị",c:"#CFCFCB",d:"Rổ inox hoặc nan, kéo ra giúp lấy đồ gọn.",use:"Tủ bếp dưới",up:"Gọn, dễ lấy",dn:"Cần đo kỹ lòng tủ",p:0},
+    {g:"pk",n:"Khóa tủ, khóa ngăn kéo",c:"#9A9A95",d:"Khóa cơ hoặc khóa từ cho ngăn quan trọng.",use:"Tủ hồ sơ, tủ rượu, ngăn kéo bàn",up:"An toàn, tránh trẻ nhỏ mở",dn:"Cần khoét lỗ đúng vị trí từ đầu",p:0}
+  ];
+  var state={g:"all"};
+  var picked=[];
+  try{var s=localStorage.getItem("mocnha-mau");if(s)picked=JSON.parse(s).filter(function(i){return i>=0&&i<M.length})}catch(e){}
+  var $=function(id){return document.getElementById(id)};
+  function lvl(p){if(!p)return"";var a="",i;for(i=0;i<4;i++)a+=i<p?"₫":"<i>₫</i>";return '<span class="lvl" title="Mức giá tương đối">'+a+'</span>'}
+  function chips(){
+    $("gchips").innerHTML=[{id:"all",n:"Tất cả"}].concat(G).map(function(g){return '<button type="button" class="chip" data-g="'+g.id+'" aria-pressed="'+(state.g===g.id)+'">'+g.n+'</button>'}).join("");
+  }
+  function render(){
+    var html="";
+    G.forEach(function(g){
+      if(state.g!=="all"&&state.g!==g.id)return;
+      html+='<h2 class="gtitle" id="g-'+g.id+'">'+g.n+'</h2><p class="gdesc">'+g.d+'</p><div class="mgrid">';
+      M.forEach(function(m,i){
+        if(m.g!==g.id)return;
+        var on=picked.indexOf(i)>-1;
+        html+='<article class="mcard"><div class="sw" style="background:'+m.c+'"></div><h3>'+m.n+'</h3><p>'+m.d+'</p><dl><dt>Dùng cho</dt><dd>'+m.use+'</dd><dt>Ưu điểm</dt><dd>'+m.up+'</dd><dt>Lưu ý</dt><dd>'+m.dn+'</dd></dl><div class="row">'+lvl(m.p)+'<button type="button" class="add" data-add="'+i+'">'+(on?"Đã chọn mẫu":"Thêm mẫu")+'</button></div></article>';
+      });
+      html+='</div>';
+    });
+    $("catalog").innerHTML=html;
+  }
+  function save(){try{localStorage.setItem("mocnha-mau",JSON.stringify(picked))}catch(e){}}
+  function toast(t){var el=$("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},2200)}
+  function refresh(){
+    $("sampTxt").textContent=picked.length?"Đã chọn "+picked.length+" mẫu để nhận":"Chưa chọn mẫu nào";
+    $("listItems").innerHTML=picked.length?picked.map(function(i){return '<li><span>'+M[i].n+'</span><button type="button" data-rm="'+i+'">Bỏ</button></li>'}).join(""):'<li style="border:0;color:var(--muted)">Chưa có mẫu nào. Bấm "Thêm mẫu" ở từng vật liệu.</li>';
+    $("msg").value=picked.length?"Chào bạn, tôi muốn nhận mẫu các vật liệu sau trước khi chốt:\n"+picked.map(function(i,k){return (k+1)+". "+M[i].n}).join("\n")+"\nTên, số điện thoại và địa chỉ nhận mẫu: "+$("addr").value:"";
+  }
+  function toggle(i){
+    var k=picked.indexOf(i);
+    if(k>-1){picked.splice(k,1);toast("Đã bỏ khỏi danh sách mẫu")}else{picked.push(i);toast("Đã thêm vào danh sách mẫu")}
+    save();refresh();render();
+  }
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("button");if(!t)return;
+    if(t.dataset.g){state.g=t.dataset.g;chips();render()}
+    else if(t.dataset.add)toggle(+t.dataset.add);
+    else if(t.dataset.rm)toggle(+t.dataset.rm);
+    else if(t.hasAttribute("data-close"))$("drawer").hidden=true;
+  });
+  $("openSamp").addEventListener("click",function(){$("drawer").hidden=false});
+  $("drawer").addEventListener("click",function(e){if(e.target===$("drawer"))$("drawer").hidden=true});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")$("drawer").hidden=true});
+  $("addr").addEventListener("input",refresh);
+  $("clearList").addEventListener("click",function(){picked=[];save();refresh();render()});
+  $("copyMsg").addEventListener("click",function(){
+    var m=$("msg");if(!m.value){toast("Danh sách đang trống");return}
+    function fb(){m.focus();m.select();toast("Đã chọn sẵn nội dung, hãy nhấn Ctrl+C hoặc giữ để sao chép")}
+    try{navigator.clipboard.writeText(m.value).then(function(){toast("Đã sao chép nội dung")},fb)}catch(e){fb()}
+  });
+  chips();render();refresh();
+})();
+</script>
+</body>
+</html>
