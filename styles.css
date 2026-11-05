@@ -209,3 +209,7 @@ button.chip,.crumbs a{display:inline-flex;align-items:center}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--brass-ink:var(--brass)}}
 :root[data-theme="dark"]{--brass-ink:var(--brass)}
 .steps li::before,.mcard .lvl{color:var(--brass-ink)}
+
+/* Ảnh sản phẩm thật phủ lên hình vẽ minh họa */
+.card .pic,.sheet .pic,.pd-main,.pd-thumbs .th{position:relative}
+.anh-that{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
