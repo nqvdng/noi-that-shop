@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://nqvdng.github.io/noi-that-shop/sitemap.xml

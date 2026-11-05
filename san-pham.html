@@ -9,6 +9,12 @@
 <meta property="og:type" content="product">
 <meta property="og:title" content="Chi tiết sản phẩm | Mộc Nhà Nội Thất">
 <meta property="og:description" content="Xem kích thước, vật liệu, màu sắc và bảo hành của sản phẩm nội thất tại Mộc Nhà.">
+<link rel="canonical" id="canon" href="https://nqvdng.github.io/noi-that-shop/san-pham.html">
+<meta property="og:url" id="ogurl" content="https://nqvdng.github.io/noi-that-shop/san-pham.html">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Mộc Nhà Nội Thất">
+<meta property="og:image" content="https://nqvdng.github.io/noi-that-shop/assets/du-an/tc-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
 <link rel="stylesheet" href="styles.css">
@@ -132,6 +138,13 @@
   [["meta[name=description]",desc],["meta[property='og:title']",p.n+" | Mộc Nhà Nội Thất"],["meta[property='og:description']",desc]].forEach(function(a){
     var m=document.querySelector(a[0]);if(m)m.setAttribute("content",a[1]);
   });
+
+  /* canonical riêng cho từng sản phẩm và dữ liệu có cấu trúc (giá là giá mẫu) */
+  var url="https://nqvdng.github.io/noi-that-shop/san-pham.html?id="+p.id;
+  $("canon").setAttribute("href",url);$("ogurl").setAttribute("content",url);
+  var ld=document.createElement("script");ld.type="application/ld+json";
+  ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Product","name":p.n,"description":p.d+" Kích thước: "+p.dim+". Giá hiển thị là giá mẫu, chưa phải giá bán thật.","sku":"MN-"+String(p.id).padStart(3,"0"),"category":p.room,"material":p.mat,"brand":{"@type":"Brand","name":"Mộc Nhà"},"url":url,"offers":{"@type":"Offer","priceCurrency":"VND","price":String(p.price),"availability":"https://schema.org/PreOrder","url":url}});
+  document.head.appendChild(ld);
 
   /* ---------- hình ---------- */
   var views=[["Mặt trước","front"],["Góc nghiêng","angle"],["Chi tiết vật liệu","detail"]];

@@ -198,3 +198,14 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
 .card h3 a:hover{text-decoration:underline}
 .card .more{font-size:.88rem;color:var(--moss)}
 @media (max-width:900px){.pd,.pd-cols{grid-template-columns:1fr}}
+
+/* Vùng bấm tối thiểu 44 px trên điện thoại */
+.add,button.chip,.cats button,select,.crumbs a{min-height:44px}
+button.chip,.crumbs a{display:inline-flex;align-items:center}
+.chip .rm{min-width:44px;min-height:44px;margin:-8px -12px -8px -4px}
+
+/* Chữ màu đồng đủ tương phản (4,5:1) ở chế độ sáng */
+:root{--brass-ink:#7A5B1F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--brass-ink:var(--brass)}}
+:root[data-theme="dark"]{--brass-ink:var(--brass)}
+.steps li::before,.mcard .lvl{color:var(--brass-ink)}

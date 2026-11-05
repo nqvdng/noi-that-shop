@@ -101,6 +101,8 @@ Lỗi hay gặp: thiếu dấu phẩy giữa hai sản phẩm, thiếu hoặc th
 
 Trang chi tiết của sản phẩm mới tự có tại `san-pham.html?id=42`, không cần làm thêm.
 
+Để Google biết trang mới, mở `sitemap.xml`, chép một dòng `<url>...</url>` có sẵn, dán xuống dưới và đổi số `id` (ví dụ `san-pham.html?id=42`).
+
 ### 3.3. Sửa thông tin riêng ở trang chi tiết
 Mở `product-details.js`:
 - `MN_MAT_INFO`: hoàn thiện, bảo quản, các màu gỗ theo từng vật liệu (áp dụng cho mọi sản phẩm cùng vật liệu).
@@ -194,6 +196,6 @@ Tải repo: **Code > Download ZIP**, giải nén. Bấm đúp `index.html` để
 | `product-details.js` | Thông tin chi tiết: hoàn thiện, bảo quản, bảo hành, màu |
 | `styles.css` | Màu sắc, chữ, bố cục dùng chung |
 | `assets/du-an/`, `assets/ban-ve/` | Ảnh công trình, ảnh bản vẽ |
-| `404.html`, `favicon.svg`, `robots.txt` | Trang lỗi, biểu tượng, cấu hình công cụ tìm kiếm |
+| `404.html`, `favicon.svg`, `robots.txt`, `sitemap.xml` | Trang lỗi, biểu tượng, cấu hình và danh sách trang cho công cụ tìm kiếm |
 | `.github/workflows/pages.yml` | Tự đăng trang khi có thay đổi trên `main` |
 | `CLAUDE.md`, `docs/` | Quy tắc cho người và Claude làm tiếp, các hướng dẫn |
