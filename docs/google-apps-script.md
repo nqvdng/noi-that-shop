@@ -18,14 +18,13 @@ Nếu chưa làm gì, biểu mẫu vẫn dùng được: khách bấm gửi sẽ
 1. Trong bảng vừa tạo, vào menu **Tiện ích mở rộng** (Extensions) > **Apps Script**.
 2. Xóa hết mã có sẵn trong ô soạn thảo.
 3. Dán toàn bộ mã dưới đây.
-4. Sửa dòng `EMAIL_NHAN` thành email bạn muốn nhận thông báo.
+4. Bản này không gửi email, nên không phải sửa gì thêm.
 5. Bấm biểu tượng đĩa mềm (Lưu), đặt tên dự án là `Nhan yeu cau`.
 
 ```javascript
 // Nhận yêu cầu báo giá từ biểu mẫu bao-gia.html, ghi vào Google Sheet và gửi email thông báo.
 // Không để mật khẩu hay khóa bí mật trong mã này.
 
-const EMAIL_NHAN = "ten-ban@gmail.com";   // ĐỔI thành email nhận thông báo
 const TEN_TRANG = "Yeu cau";               // tên trang tính sẽ tạo
 const TOI_DA_KY_TU = 1000;                 // cắt bớt nội dung quá dài
 const GIAY_TOI_THIEU = 3;                  // gửi nhanh hơn thế này coi là máy tự động
@@ -69,11 +68,8 @@ function doPost(e) {
     ];
     sh.appendRow(hang);
 
-    // 5. Gửi email thông báo
-    const noiDung = COT.slice(0, 11).map(function (c, i) { return c + ": " + hang[i]; }).join("\n");
-    const tuyChon = {};
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(hang[3])) tuyChon.replyTo = hang[3];
-    MailApp.sendEmail(EMAIL_NHAN, "Yêu cầu báo giá mới: " + ten, noiDung, tuyChon);
+    // 5. Không gửi email: tránh xin quyền Gmail, một số tài khoản Google chặn quyền này.
+    //    Xem dòng mới bằng cách mở bảng tính (xem phần "Nhận thông báo" bên dưới).
 
     return traVe({ ok: true });
   } catch (err) {
@@ -107,7 +103,7 @@ function thuNghiem() {
 3. Nếu hiện cảnh báo "Google chưa xác minh ứng dụng này", bấm **Nâng cao** > **Đi tới Nhan yeu cau (không an toàn)** > **Cho phép**. Đây là mã của chính bạn nên yên tâm.
 4. Mở lại Google Sheet: phải có thêm trang `Yeu cau` với một dòng thử. Hộp thư của bạn nhận một email. Xóa dòng thử.
 
-Nếu hàm `thuNghiem` báo lỗi hoặc không có dòng nào, kiểm tra lại bước dán mã (thiếu hoặc thừa dấu ngoặc) và dòng `EMAIL_NHAN`.
+Nếu hàm `thuNghiem` báo lỗi hoặc không có dòng nào, kiểm tra lại bước dán mã (thiếu hoặc thừa dấu ngoặc).
 
 ## Bước 4. Đăng thành Web app
 
@@ -133,7 +129,7 @@ Nếu hàm `thuNghiem` báo lỗi hoặc không có dòng nào, kiểm tra lại
 ## Sau này
 
 - **Sửa mã Apps Script:** sau mỗi lần sửa phải bấm **Triển khai** > **Quản lý bản triển khai** > bút chì > **Phiên bản mới** > **Triển khai**. Nếu chỉ lưu mà không triển khai lại, trang vẫn chạy mã cũ. URL không đổi.
-- **Đổi email nhận:** sửa `EMAIL_NHAN` rồi triển khai lại như trên.
+- **Nhận thông báo khi có yêu cầu mới:** trong bảng tính chọn **Công cụ > Quy tắc thông báo**, đặt "Có bất kỳ thay đổi nào được thực hiện" và "Gửi email cho tôi ngay lập tức". Chưa kiểm chứng quy tắc này có chạy với dòng do script ghi hay không, bạn nên gửi thử một yêu cầu để xem. Nếu không có email, bạn mở bảng tính xem dòng mới, hoặc cài ứng dụng Google Sheets trên điện thoại.
 - **Cột Trạng thái:** mỗi yêu cầu mới có chữ `Mới`. Bạn đổi tay thành `Đã gọi`, `Đã báo giá`... để theo dõi.
 - **Thư rác:** biểu mẫu đã có ô bẫy ẩn, giới hạn gửi lại trên trình duyệt (config.js) và chống trùng theo số điện thoại. Nếu vẫn bị gửi bậy, nhờ người hỗ trợ thêm mã xác nhận hoặc đổi sang URL mới (Tạo triển khai mới rồi đổi `FORM_ENDPOINT`).
 - **Hạn mức:** tài khoản Google thường gửi được khoảng 100 email mỗi ngày bằng Apps Script. Dư dùng cho một cửa hàng nhỏ.
