@@ -1,5 +1,16 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mộc Nhà Nội Thất</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Nội thất gỗ chọn sẵn hoặc làm riêng, thi công và lắp đặt trọn gói tại TP.HCM.">
+<meta name="theme-color" content="#1F7A43">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mộc Nhà Nội Thất">
+<meta property="og:description" content="Nội thất gỗ chọn sẵn hoặc làm riêng, thi công và lắp đặt trọn gói tại TP.HCM.">
+<meta property="og:image" content="assets/du-an/tc-01.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
 <style>
 /* Layout: catalog (smow) crossed with editorial project spreads (Boca do Lobo): hero, filterable catalog with side rail, asymmetric project spread, build process, contact. */
@@ -23,7 +34,9 @@
   --plaster:#222A23;--paper:#171C18;--walnut:#ECE6DD;--moss:#7CC596;--brass:#D2AE5E;--line:#37403A;--muted:#A3AC9E;--floor:#2A332B;--panel:#2A332B;--on-accent:#171C18;color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--walnut);font-family:var(--font-body);font-size:16px;line-height:1.6}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--walnut);font-family:var(--font-body);font-size:16px;line-height:1.6}
+img{max-width:100%}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
 h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
 p{margin:0}
@@ -135,7 +148,8 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
 .news-art svg{display:block;width:100%;height:100%}
 .news h3{font-size:1.5rem}
 .news .meta{color:var(--muted);font-size:.88rem;margin-top:8px}
-.article{display:block;max-width:720px;padding:28px}
+.sheet.article{display:block;max-width:720px;padding:28px}
+.article .x{float:right;margin-left:12px}
 .article h2{font-size:1.7rem;margin:12px 0 8px}
 .article h3{font-size:1.15rem;margin:22px 0 6px}
 .article p{max-width:62ch}
@@ -171,6 +185,8 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
 @media (max-width:520px){.steps{grid-template-columns:1fr}.top .btn span.t{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+</head>
+<body>
 
 <header class="top">
   <div class="wrap">
@@ -513,9 +529,8 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
   });
   function closeAll(){["detail","drawer","news","lightbox"].forEach(function(id){$(id).hidden=true})}
   var shots=[
-    ["tc-01","Giường hộc kéo, đầu giường ốp gỗ"],["tc-02","Tủ bếp và kệ trang trí sơn xám"],["tc-03","Tủ khung mở kèm bàn trang điểm treo"],
-    ["tc-04","Tủ quần áo cánh cao"],["tc-05","Đầu giường bọc nệm xám"],["tc-06","Bàn làm việc treo cạnh tủ cao"],
-    ["tc-07","Tủ âm dưới cầu thang"],["tc-08","Cầu thang kính và tủ liền khối"],["tc-09","Vách lam gỗ phòng khách"],["tc-10","Lam gỗ cao thông tầng"]
+    ["tc-01","Cầu thang kính và tủ âm liền khối bên dưới"],["tc-02","Vách lam gỗ phân chia không gian"],["tc-03","Giường hộc kéo, đầu giường ốp gỗ"],
+    ["tc-04","Lam gỗ cao thông tầng"],["tc-05","Đầu giường bọc nệm xám"],["tc-06","Tủ bếp và kệ trang trí sơn xám"]
   ];
   $("gal").innerHTML=shots.map(function(s,i){return '<button type="button" data-photo="'+i+'" aria-label="Xem ảnh: '+s[1]+'"><img src="assets/du-an/'+s[0]+'.jpg" alt="'+s[1]+'" loading="lazy"></button>'}).join("");
   function openPhoto(i){$("lbImg").src="assets/du-an/"+shots[i][0]+".jpg";$("lbImg").alt=shots[i][1];$("lbCap").textContent=shots[i][1];$("lightbox").hidden=false}
@@ -543,3 +558,5 @@ footer{padding-block:24px;color:var(--muted);font-size:.85rem}
   renderRail();renderGrid();renderList();
 })();
 </script>
+</body>
+</html>
